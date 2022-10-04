@@ -37,11 +37,11 @@
         <tbody>
           <td><%= image_tag item.get_image(50,50) %></td>
           <td><%= item.name %></td>
-          <td><%= item.category %></td>
+          <td><%= item.category_id %></td>
           <td><%= item.without_tax %></td>
           <td><%= item.is_active %></td>
           <td><%= item.stock %></td>
-          <td><%= link_to "Show", admin_store_item_path(store_id, item_id), class: "btn btn-info" %></td>
+          <td><%= link_to "Show", admin_store_item_path(@store.id, item.id), class: "btn btn-info" %></td>
         </tbody>
       <% end %>
     </table>
