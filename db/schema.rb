@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2022_10_04_000245) do
     t.datetime "remember_created_at"
     t.integer "sale_area_id", null: false
     t.string "name", null: false
-    t.boolean "owner_flag", default: true, null: false
+    t.boolean "owner_flag", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_stores_on_email", unique: true

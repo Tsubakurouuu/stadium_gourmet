@@ -33,7 +33,7 @@ class DeviseCreateStores < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
       t.integer :sale_area_id, null: false
       t.string :name, null: false
-      t.boolean :owner_flag, null: false, default: true
+      t.boolean :owner_flag, null: false, default: false
 
 
       t.timestamps null: false
