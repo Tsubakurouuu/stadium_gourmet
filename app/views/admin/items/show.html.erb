@@ -1,2 +1,42 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
+<div class="container">
+  <div class="row mt-5">
+    <h2><%= @item.name %></h2>
+  </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-md-4">
+      <%= image_tag @item.get_image(250,250) %>
+    </div>
+    <div class="col-md-4 offset-md-1">
+      <table class="table table-borderless">
+        <tr>
+          <th>商品説明</th>
+          <td><%= @item.explanation %></td>
+        </tr>
+        <tr>
+          <th>値段</th>
+          <td><%= @item.without_tax %></td>
+        </tr>
+        <tr>
+          <th>販売ステータス</th>
+          <td><%= @item.is_active %></td>
+        </tr>
+        <tr>
+          <th>在庫数</th>
+          <td><%= @item.stock %></td>
+        </tr>
+        <tr>
+          <th>売上数</th>
+          <td><%= @item.earning %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 offset-md-4">
+      <%= link_to "編集する", edit_admin_store_item_path(current_admin_store.id, @item.id), class: "btn btn-success", style: "width: 70%" %>
+    </div>
+    <div class="col-md-3">
+      <%= link_to "削除する", admin_store_item_path(current_admin_store.id, @item.id), method: :delete, class: "btn btn-danger", style: "width: 70%", data: {confirm: "削除しますか？"} %>
+    </div>
+  </div>
+</div>
