@@ -4,11 +4,11 @@ class Admin::ItemsController < ApplicationController
   end
 
   def create
-    @store = Store.find(params[:store_id])
+    store = Store.find(params[:store_id])
     @item = current_admin_store.items.new(item_params)
     @item.store_id = @store.id
     @item.save
-    redirect_to admin_store_item_path(@store.id, @item.id)
+    redirect_to admin_store_item_path(store.id, @item.id)
   end
 
   def show
@@ -16,6 +16,21 @@ class Admin::ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    store = Store.find(params[:store_id])
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to admin_store_item_path(store.id, @item.id)
+  end
+
+  def destroy
+    store = Store.find(params[:store_id])
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to admin_store_path(store.id)
   end
 
   private
