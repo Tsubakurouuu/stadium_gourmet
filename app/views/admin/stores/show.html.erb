@@ -1,3 +1,49 @@
 <div class="container">
-  <h2><%= @store.name %></h2>
+  <div class="row mt-5">
+    <div class="col-md-3">
+      <h2 class="mr-5"><%= @store.name %></h2>
+    </div>
+    <div class="col-md-3">
+      <div class="ml-5 mr-5"><%= image_tag @store.get_image(200,200) %></div>
+    </div>
+    <div class="col-md-2">
+      <table class="table table-borderless mt-5">
+        <tr>
+          <th>販売エリア</th>
+          <td><%= @store.sale_area_id %></td>
+        </tr>
+        <tr>
+          <th>販売商品数</th>
+          <td><%= @store.items.count %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <h4>販売商品</h4>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <th>商品画像</th>
+        <th>商品名</th>
+        <th>カテゴリー名</th>
+        <th>価格</th>
+        <th>販売ステータス</th>
+        <th>在庫数</th>
+        <th></th>
+      </thead>
+      <% @items.each do |item| %>
+        <tbody>
+          <td><%= image_tag item.get_image(50,50) %></td>
+          <td><%= item.name %></td>
+          <td><%= item.category %></td>
+          <td><%= item.without_tax %></td>
+          <td><%= item.is_active %></td>
+          <td><%= item.stock %></td>
+          <td><%= link_to "Show", admin_store_item_path(store_id, item_id), class: "btn btn-info" %></td>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
 </div>
