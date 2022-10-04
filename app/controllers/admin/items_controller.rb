@@ -6,7 +6,7 @@ class Admin::ItemsController < ApplicationController
   def create
     store = Store.find(params[:store_id])
     @item = current_admin_store.items.new(item_params)
-    @item.store_id = @store.id
+    @item.store_id = store.id
     @item.save
     redirect_to admin_store_item_path(store.id, @item.id)
   end

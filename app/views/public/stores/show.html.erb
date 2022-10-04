@@ -1,2 +1,39 @@
-<h1>Public::Stores#show</h1>
-<p>Find me in app/views/public/stores/show.html.erb</p>
+<div class="container">
+  <div class="row mt-5">
+    <h3 class="mr-5"><%= @store.name %></h2>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="ml-5 mr-5"><%= image_tag @store.get_image(150,150) %></div>
+    </div>
+    <div class="col-6">
+      <table class="table table-borderless mt-5">
+        <tr>
+          <th>販売エリア</th>
+          <td><%= @store.sale_area_id %></td>
+        </tr>
+        <tr>
+          <th>販売商品数</th>
+          <td><%= @store.items.count %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <h4>販売商品一覧</h4>
+  </div>
+  <div class="row">
+    <div class="d-flex flex-wrap mx-auto">
+      <% @items.each do |item| %>
+        <%= link_to store_item_path(@store.id, item.id), class: "text-dark" do %>
+          <div class= "m-1 p-1">
+            <div><%= image_tag item.get_image(250,250) %></div><br>
+            <div><%= item.name %></div><br>
+            <div><%= item.category_id %></div><br>
+            <div>値段: <%= item.without_tax %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
