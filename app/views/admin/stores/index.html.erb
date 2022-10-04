@@ -3,20 +3,24 @@
     <h3>店舗一覧</h3>
   </div>
   <div class="row">
+    <table class="table">
+      <thead>
+        <th>店舗画像</th>
+        <th>店舗名</th>
+        <th>販売エリア</th>
+        <th>販売商品数</th>
+        <th></th>
+      </thead>
+      <% @stores.each do |store| %>
+        <tbody>
+          <td><%= image_tag store.get_image(50,50) %></td>
+          <td><%= store.name %></tb>
+          <td><%= store.sale_area_id %></td>
+          <td><%= store.items.count %></td>
+          <td><%= link_to "Show", admin_store_path(store.id), class: "btn btn-info" %></td>
+        </tbody>
+      <% end %>
+    </table>
 
-
-    <% @stores.each do |store| %>
-      <div class="col-md-4">
-        <%= link_to admin_store_path(store.id) do %>
-          <%= image_tag store.get_image(200,150) %>
-        <% end %>
-        <p>店舗名</p>
-          <%= store.name %>
-        <p>販売エリア</p>
-          <%= store.sale_area_id %>
-        <p>販売商品数</p>
-          <%= store.items.count %>
-      </div>
-    <% end %>
   </div>
 </div>
