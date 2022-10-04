@@ -9,10 +9,25 @@
 #店舗データ
 Store.create!(
   name: '管理人',
-  sale_area_id: '1',
   email: 'admin@admin',
   password: '111111',
   owner_flag: "true",
+)
+
+Store.create!(
+  name: '牛肉専門店',
+  sale_area_id: '3',
+  email: 'gyuniku@admin',
+  password: '111111',
+  owner_flag: "false",
+)
+
+Store.create!(
+  name: '美味しいラーメン屋さん',
+  sale_area_id: '4',
+  email: 'ramen@admin',
+  password: '111111',
+  owner_flag: "false",
 )
 
 #カテゴリー初期データ
