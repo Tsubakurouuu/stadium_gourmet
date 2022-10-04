@@ -1,0 +1,2 @@
+class SaleArea < ApplicationRecord
+end
