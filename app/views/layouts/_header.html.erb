@@ -1,47 +1,51 @@
-<% if admin_store_signed_in? %>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">管理者</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <%= link_to "ログアウト", destroy_admin_store_session_path, method: :delete, class: 'nav-link' %>
-        </li>
-        <% if current_admin_store.owner_flag == true %>
+<header>
+  <!--店舗ログイン時-->
+  <% if admin_store_signed_in? %>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c22a1f">
+      <a class="navbar-brand" href="/admin">管理者</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <%= link_to "店舗一覧", admin_stores_path, class: 'nav-link' %>
+            <%= link_to "ログアウト", destroy_admin_store_session_path, method: :delete, class: 'nav-link' %>
           </li>
-        <% elsif current_admin_store.owner_flag == false %>
+          <!--管理者ログイン時-->
+          <% if current_admin_store.owner_flag == true %>
+            <li class="nav-item">
+              <%= link_to "店舗一覧", admin_stores_path, class: 'nav-link' %>
+            </li>
+          <% elsif current_admin_store.owner_flag == false %>
+            <li class="nav-item">
+              <%= link_to "店舗ページ", admin_store_path(current_admin_store), class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "商品登録", new_admin_store_item_path, class: 'nav-link' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  <% else %>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4db56a">
+      <a class="navbar-brand" href="/">スタジアムグルメ</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <%= link_to "店舗ページ", admin_store_path(current_admin_store), class: 'nav-link' %>
+            <%= link_to "新着グルメ", new_gourmets_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "商品登録", new_admin_store_item_path, class: 'nav-link' %>
+            <%= link_to "グルメランキング", rankings_path, class: 'nav-link' %>
           </li>
-        <% end %>
-      </ul>
-    </div>
-  </nav>
-<% else %>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4db56a">
-    <a class="navbar-brand" href="#">スタジアムグルメ</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <%= link_to "新着グルメ", new_gourmets_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "グルメランキング", rankings_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "グルメ検索", searches_path, class: 'nav-link' %>
-        </li>
-      </ul>
-    </div>
-  </nav>
-<% end %>
+          <li class="nav-item">
+            <%= link_to "グルメ検索", searches_path, class: 'nav-link' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <% end %>
+</header>
