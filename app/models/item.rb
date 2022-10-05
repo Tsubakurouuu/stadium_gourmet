@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :store
-  belongs_to :category
+  belongs_to :category, optional: true
   has_many :cart_items, dependent: :destroy
   has_many :order_details, dependent: :destroy
 
