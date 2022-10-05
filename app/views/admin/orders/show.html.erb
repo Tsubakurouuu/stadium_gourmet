@@ -1,2 +1,49 @@
-<h1>Admin::Orders#show</h1>
-<p>Find me in app/views/admin/orders/show.html.erb</p>
+<div class="container">
+  <div class="row mt-5">
+    <h2>注文履歴詳細</h2>
+  </div>
+  <div class="row">
+    <table class="table table-borderless mt-3">
+      <tr>
+        <th>注文番号</th>
+        <td><%= @order.order_number %></td>
+      </tr>
+      <tr>
+        <th>注文日</th>
+        <td><%= @order.created_at.strftime('%Y/%m/%d/%H:%M') %></td>
+      </tr>
+      <tr>
+        <th>座席情報</th>
+        <td>
+          <span><%= @order.seat_area %></span>-
+          <span><%= @order.seat_alphabet %></span>-
+          <span><%= @order.seat_number %></span>
+        </td>
+      </tr>
+      <tr>
+        <th>支払い方法</th>
+        <td>クレジットカード</td>
+      </tr>
+      <tr>
+        <th>注文ステータス</th>
+        <td><%= @order.order_status %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-9">
+      <table class="table">
+        <thead>
+          <th>商品名</th>
+          <th>単価(税込)</th>
+          <th>数量</th>
+          <th>小計</th>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
