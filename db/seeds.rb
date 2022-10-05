@@ -60,7 +60,7 @@ item = Item.create!(
   explanation: "1974年以降に登場した神奈川県横浜市発祥の豚骨醤油ベースで太いストレート麺を特徴とするラーメンおよびそのラーメン店群です。 元々屋号に「○○家」とついているところが多かったところから、家系と呼ばれるようになりました。",
   without_tax: "950",
 )
-item.image.attach(io: File.open(Rails.root.join('app/assets/images/mabo.jpg')), filename: 'mabo.jpg')
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/ieramen.jpg')), filename: 'ieramen.jpg')
 #2
 item = Item.create!(
   store_id: "2",
@@ -69,7 +69,7 @@ item = Item.create!(
   explanation: "豚ひき肉とねぎ・しょうがのみじん切りを炒めてスープを加え、しょうゆ・豆板醤(トウバンジャン)・豆豉(トウチ)・花椒（中国料理で用いられるさんしょう）などで調味した中に、さいの目に切った豆腐を入れて少し煮込み、水溶き片栗粉でとろみをつけたもの。",
   without_tax: "1250",
 )
-item.image.attach(io: File.open(Rails.root.join('app/assets/images/ieramen.jpg')), filename: 'ieramen.jpg')
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/mabo.jpg')), filename: 'mabo.jpg')
 #3
 item = Item.create!(
   store_id: "3",
