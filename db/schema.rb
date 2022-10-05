@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2022_10_04_032447) do
     t.string "seat_alphabet", null: false
     t.integer "seat_number", null: false
     t.string "order_number", null: false
-    t.integer "shopping_cost", null: false
+    t.integer "shipping_cost", null: false
     t.integer "total_price", null: false
     t.integer "order_status", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
