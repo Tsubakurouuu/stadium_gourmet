@@ -1,2 +1,84 @@
-<h1>Public::Orders#confirm</h1>
-<p>Find me in app/views/public/orders/confirm.html.erb</p>
+<div class="container">
+  <div class="row mt-5">
+    <h3>注文情報確認</h3>
+  </div>
+  <div class="row mt-3 ml-3">
+    <h4>購入商品</h4>
+  </div>
+  <div class="row mt-3">
+    <% @cart_items.each do |cart_item| %>
+    <div class="col-4 mt-3">
+      <%= image_tag cart_item.item.get_image(150, 150) %>
+    </div>
+    <div class="col-7 offset-1 ml-4 mt-3">
+      <div>
+        <span><%= cart_item.item.name %></span>
+        <span class="ml-3">数量 <strong><%= cart_item.amount %></strong></span><br>
+      </div>
+      <div class="mt-5">
+        <span>単価 <%= cart_item.item.with_tax_price %> 円</span>
+        <span class="ml-3">小計 <strong><%= cart_item.subtotal %> 円</strong></span>
+      </div>
+    </div>
+    <% @product_total = @product_total + cart_item.subtotal %>
+    <% end %>
+  </div>
+  <div class="row mt-3 ml-3">
+    <h4>支払い方法</h4>
+  </div>
+  <div class="row">
+    <p class="mx-auto">クレジットカード</p>
+  </div>
+  <div class="row mt-3 ml-3">
+    <h4>座席情報</h4>
+  </div>
+  <div class="row mx-auto">
+    <table class="table table-borderless">
+      <tr>
+        <th width="50%" >座席エリア</th>
+        <td width="50%"><%= @order.seat_area %></td>
+      </tr>
+      <tr>
+        <th>座席アルファベット</th>
+        <td><%= @order.seat_alphabet %></td>
+      </tr>
+      <tr>
+        <th>座席番号</th>
+        <td><%= @order.seat_number %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p>送料</p>
+    </div>
+    <div class="col-8">
+      <strong>200 円</strong>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p>商品合計</p>
+    </div>
+    <div class="col-8">
+      <strong><%= @product_total %> 円</strong>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <p>請求金額</p>
+    </div>
+    <div class="col-8">
+      <strong><%= @total_price = @product_total + 200 %> 円</strong>
+    </div>
+  </div>
+  <%= form_with model: @order, url: orders_path do |f| %>
+    <%= f.hidden_field :seat_area, value: @order.seat_area %>
+    <%= f.hidden_field :seat_alphabet, value: @order.seat_alphabet %>
+    <%= f.hidden_field :seat_number, value: @order.seat_number %>
+    <%= f.hidden_field :total_price, value: @total_price %>
+    <div class="text-center mt-">
+      <%= f.submit "注文を確定する", class: "btn btn-primary text-center", style: "width: 30%;" %>
+    </div>
+  <% end %>
+</div>

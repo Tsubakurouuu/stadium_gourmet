@@ -4,23 +4,26 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-    cart_items = CartItem.all
     @order = Order.new(order_params)
     @order.shipping_cost = 200
-    @order.total_price = @order.shipping_cost + cart_items.subtotal
-    binding.pry
+    @order.order_number = ('A'..'Z').to_a.sample(6)
     @order.save
-    redirect_to orders_confirm_path
+    redirect_to orders_complete_path
   end
 
   def complete
   end
 
   def confirm
+    @order = Order.new(order_params)
+    @cart_items = CartItem.all
+    @product_total = 0
   end
 
+
   private
+
   def order_params
-    params.require(:order).permit(:seat_area, :seat_alphabet, :seat_number)
+    params.require(:order).permit(:seat_area, :seat_alphabet, :seat_number, :total_price)
   end
 end

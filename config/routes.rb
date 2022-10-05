@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   #管理者
   namespace :admin do
     root to: 'homes#top'
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       registrations: "admin/registrations",
       sessions: 'admin/sessions'
     }
-    
+
     resources :stores, only: [:index, :show] do
       resources :items, except: [:index]
     end
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
     get 'orders/confirm' => 'orders#new'
     post 'orders/confirm' => 'orders#confirm'
-    get 'orders/complate' => 'orders#complete'
+    get 'orders/complete' => 'orders#complete'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
