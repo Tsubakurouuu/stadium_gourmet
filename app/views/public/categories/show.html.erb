@@ -1,2 +1,18 @@
-<h1>Public::Categories#show</h1>
-<p>Find me in app/views/public/categories/show.html.erb</p>
+<div class="container">
+  <div class="row mt-5">
+    <h3><strong><%= @category.name %></strong>  一覧</h3>
+  </div>
+  <div class="row">
+    <% @items.each do |item| %>
+    <div class="col-6">
+      <%= link_to store_item_path(item.store_id, item.id) do %>
+        <%= image_tag item.get_image(200,200) %>
+        <p><%= item.name %></p>
+        <p><%= item.store.name %></p>
+        <p><%= item.store.sale_area.name %></p>
+        <p><%= item.without_tax.to_s(:delimited) %>円</p>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
