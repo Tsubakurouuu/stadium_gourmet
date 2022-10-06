@@ -1,2 +1,9 @@
-<h1>Public::SaleAreas#index</h1>
-<p>Find me in app/views/public/sale_areas/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <% @sale_areas.each do |sale_area| %>
+    <div class="col-6 mt-5" style="height: 100px; text-align: center;">
+      <%= link_to sale_area.name, sale_area_path(sale_area.id), class: "btn btn-primary w-75 h-100" %>
+    </div>
+    <% end %>
+  </div>
+</div>
