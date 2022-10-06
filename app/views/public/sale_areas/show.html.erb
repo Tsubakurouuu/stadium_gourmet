@@ -1,2 +1,16 @@
-<h1>Public::SaleAreas#show</h1>
-<p>Find me in app/views/public/sale_areas/show.html.erb</p>
+<div class="container">
+  <div class="row mt-5">
+    <h3><strong><%= @sale_area.name %></strong> 店舗一覧</h3>
+  </div>
+  <div class="row">
+    <% @stores.each do |store| %>
+    <div class="col-6 mt-3">
+      <%= link_to store_path(store.id) do %>
+        <%= image_tag store.get_image(200,200) %>
+        <p><%= store.name %></p>
+        <p>販売商品数:<span class="ml-3"><%= store.items.count %></span></p>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
