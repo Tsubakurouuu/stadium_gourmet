@@ -1,16 +1,16 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-md-3">
-      <h2 class="mr-5"><%= @store.name %></h2>
-    </div>
+  <div class="row mt-5 mb-1">
+    <h2 class="mr-5"><%= @store.name %></h2>
+  </div>
+  <div class="row">
     <div class="col-md-3">
       <div class="ml-5 mr-5"><%= image_tag @store.get_image(200,200) %></div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
       <table class="table table-borderless mt-5">
         <tr>
           <th>販売エリア</th>
-          <td><%= @store.sale_area_id %></td>
+          <td><%= @store.sale_area.name %></td>
         </tr>
         <tr>
           <th>販売商品数</th>
@@ -19,26 +19,26 @@
       </table>
     </div>
   </div>
-  <div class="row mt-5">
+  <div class="row mt-5 mb-1">
     <h4>販売商品一覧</h4>
   </div>
   <div class="row">
-    <table class="table">
+    <table class="table table-hover">
       <thead>
-        <th>商品画像</th>
-        <th>商品名</th>
-        <th>カテゴリー名</th>
-        <th>価格</th>
-        <th>販売ステータス</th>
-        <th>在庫数</th>
-        <th></th>
+        <th width="15%">商品画像</th>
+        <th width="25%">商品名</th>
+        <th width="15%">カテゴリー名</th>
+        <th width="10%">価格</th>
+        <th width="15%">販売ステータス</th>
+        <th width="15%">在庫数</th>
+        <th width="15%"></th>
       </thead>
       <% @items.each do |item| %>
         <tbody>
           <td><%= image_tag item.get_image(50,50) %></td>
           <td><%= item.name %></td>
-          <td><%= item.category_id %></td>
-          <td><%= item.without_tax %></td>
+          <td><%= item.category.name %></td>
+          <td><%= item.with_tax_price.to_s(:delimited) %></td>
           <td><%= item.is_active %></td>
           <td><%= item.stock %></td>
           <td><%= link_to "Show", admin_store_item_path(@store.id, item.id), class: "btn btn-info" %></td>
