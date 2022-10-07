@@ -5,7 +5,7 @@
   <div class="row">
     <% @stores.each do |store| %>
     <div class="col-6 mt-3">
-      <div class="card card-hover">
+      <div class="card">
         <%= link_to store_path(store.id), class: "text-dark" do %>
           <div class="card-img-top"><%= image_tag store.get_image(200,200), style: "width: 100%" %></div><br>
           <h5 class="card-title"><%= store.name %></h5>

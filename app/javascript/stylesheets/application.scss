@@ -18,3 +18,13 @@ body {
   margin-bottom: 100px;
   font-family: "You Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-seril;
 }
+
+.long-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card:hover {
+  background-color: gold;
+}
