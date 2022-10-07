@@ -1,6 +1,6 @@
 class Admin::StoresController < ApplicationController
   def index
-    @stores = Store.all
+    @stores = Store.where(owner_flag: false)
   end
 
   def show

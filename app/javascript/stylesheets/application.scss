@@ -11,5 +11,9 @@ header {
   position: fixed; /* ウィンドウを基準に画面に固定 */
   top: 0; /* 上下の固定位置を上から0pxにする */
   left: 0; /* 左右の固定位置を左から0pxにする */
-  margin-bottom: 30px;
+}
+
+body {
+  margin-top: 100px;
+  font-family: "You Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-seril;
 }

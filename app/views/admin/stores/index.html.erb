@@ -15,7 +15,7 @@
         <tbody>
           <td><%= image_tag store.get_image(50,50) %></td>
           <td><%= store.name %></tb>
-          <td><%= store.sale_area_id %></td>
+          <td><%= store.sale_area.name %></td>
           <td><%= store.items.count %></td>
           <td><%= link_to "Show", admin_store_path(store.id), class: "btn btn-info" %></td>
         </tbody>
