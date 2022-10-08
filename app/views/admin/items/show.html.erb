@@ -4,17 +4,17 @@
   </div>
   <div class="row mt-5 mb-5">
     <div class="col-md-4">
-      <%= image_tag @item.get_image(250,250) %>
+      <%= image_tag @item.get_image(300,300) %>
     </div>
-    <div class="col-md-4 offset-md-1">
+    <div class="col-md-8">
       <table class="table table-borderless">
         <tr>
-          <th>商品説明</th>
-          <td><%= @item.explanation %></td>
+          <th width="20%">商品説明</th>
+          <td width="80%"><%= @item.explanation %></td>
         </tr>
         <tr>
           <th>値段</th>
-          <td><%= @item.without_tax %></td>
+          <td><%= @item.without_tax.to_s(:delimited) %>(税込 <%= @item.with_tax_price.to_s(:delimited) %>) 円</td>
         </tr>
         <tr>
           <th>販売ステータス</th>
