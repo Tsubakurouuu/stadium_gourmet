@@ -3,13 +3,36 @@ class Public::CartItemsController < ApplicationController
     @cart_item = CartItem.new(cart_item_params)
     @item = Item.find(cart_item_params[:item_id])
     @cart_items = CartItem.all
-      @cart_items.each do |cart_item|
-        if cart_item.item_id == @cart_item.item_id
-          new_amount = cart_item.amount.to_i + @cart_item.amount.to_i
-          cart_item.update(amount: new_amount)
-          @cart_item.delete
-        end
+
+    # 同一商品がカート内にあれば個数を加算する
+    @cart_items.each do |cart_item|
+      if cart_item.item_id == @cart_item.item_id
+        new_amount = cart_item.amount.to_i + @cart_item.amount.to_i
+        cart_item.update(amount: new_amount)
+        @cart_item.delete
       end
+    end
+
+    ######
+    #１度に購入できるのは1つの店舗のみ
+    ######
+
+    # カートアイテムが0の場合、無条件に保存
+    if @cart_items.count == 0
+      @cart_item.save
+      redirect_to cart_items_path
+      return
+    end
+
+    # カート内のアイテムの店舗情報が同一か確認
+    @cart_items.each do |cart_item|
+      if cart_item.item.store_id != @cart_item.item.store_id
+        redirect_to request.referer
+        return
+      end
+    end
+
+    # 同一店舗が確定しているので、カートに保存
     @cart_item.save
     redirect_to cart_items_path
   end
