@@ -18,7 +18,13 @@ class Public::OrdersController < ApplicationController
       order_detail.purchase_price = cart_item.item.with_tax_price
       order_detail.amount = cart_item.amount
       order_detail.save
+      #商品在庫・売上数の更新
+      item = Item.find_by(id: cart_item.item_id)
+      item.stock -= cart_item.amount
+      item.earning += cart_item.amount
+      binding.pry
     end
+
     #保存後カートを空にする
     cart_items.destroy_all
     redirect_to orders_complete_path
