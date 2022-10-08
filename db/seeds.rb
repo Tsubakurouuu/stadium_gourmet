@@ -14,6 +14,7 @@ Store.create!(
   password: '111111',
   owner_flag: "true",
 )
+
 #2
 store = Store.create!(
   name: "愛知中華",
@@ -23,6 +24,7 @@ store = Store.create!(
   owner_flag: "false",
 )
 store.image.attach(io: File.open(Rails.root.join('app/assets/images/aichi.png')), filename: 'aichi.png')
+
 #3
 store = Store.create!(
   name: "世界一美味しいラーメン!",
@@ -41,6 +43,7 @@ store = Store.create!(
   owner_flag: "false",
 )
 store.image.attach(io: File.open(Rails.root.join('app/assets/images/fruits.png')), filename: 'fruits.png')
+
 #5
 store = Store.create!(
   name: "丼DON",
@@ -50,6 +53,46 @@ store = Store.create!(
   owner_flag: "false",
 )
 store.image.attach(io: File.open(Rails.root.join('app/assets/images/don.png')), filename: 'don.png')
+
+#6
+store = Store.create!(
+  name: "カレーマニア",
+  sale_area_id: "1",
+  email: "kare@admin",
+  password: "111111",
+  owner_flag: "false",
+)
+store.image.attach(io: File.open(Rails.root.join('app/assets/images/kare.png')), filename: 'kare.png')
+
+#7
+store = Store.create!(
+  name: "キッチンぐるぐる",
+  sale_area_id: "1",
+  email: "guruguru@admin",
+  password: "111111",
+  owner_flag: "false",
+)
+store.image.attach(io: File.open(Rails.root.join('app/assets/images/guruguru.png')), filename: 'guruguru.png')
+
+#8
+store = Store.create!(
+  name: "Cocktails",
+  sale_area_id: "2",
+  email: "cocktails@admin",
+  password: "111111",
+  owner_flag: "false",
+)
+store.image.attach(io: File.open(Rails.root.join('app/assets/images/cocktails.png')), filename: 'cocktails.png')
+
+#9
+store = Store.create!(
+  name: "おさかなやさん",
+  sale_area_id: "2",
+  email: "osakana@admin",
+  password: "111111",
+  owner_flag: "false",
+)
+store.image.attach(io: File.open(Rails.root.join('app/assets/images/osakana.png')), filename: 'osakana.png')
 
 #商品データ
 #1
@@ -61,6 +104,7 @@ item = Item.create!(
   without_tax: "950",
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/ieramen.jpg')), filename: 'ieramen.jpg')
+
 #2
 item = Item.create!(
   store_id: "2",
@@ -70,6 +114,7 @@ item = Item.create!(
   without_tax: "1250",
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/mabo.jpg')), filename: 'mabo.jpg')
+
 #3
 item = Item.create!(
   store_id: "3",
@@ -79,6 +124,7 @@ item = Item.create!(
   without_tax: "1000",
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/tukemen.jpg')), filename: 'tukemen.jpg')
+
 #4
 item = Item.create!(
   store_id: "5",
@@ -88,6 +134,7 @@ item = Item.create!(
   without_tax: "1050",
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/katudon.jpg')), filename: 'katudon.jpg')
+
 #5
 item = Item.create!(
   store_id: "4",
@@ -97,6 +144,7 @@ item = Item.create!(
   without_tax: "700",
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/kurepu.jpg')), filename: 'kurepu.jpg')
+
 #カテゴリー初期データ
 Category.create!(name: "弁当")
 Category.create!(name: "丼")
