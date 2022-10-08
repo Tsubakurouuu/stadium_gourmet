@@ -12,22 +12,22 @@
     <h4>座席情報入力</h4>
   </div>
   <div class="row mt-2 mb-3">
-    <p class="mx-auto">ご自身の座席番号を入力してください</p>
+    <p class="mx-auto">ご自身の座席番号を入力してください。</p>
   </div>
   <div>
     <%= form_with model: @order, url: orders_confirm_path, mathod: :post do |f| %>
     <table class="table　table-bprderless mx-auto">
       <tr>
         <th>座席エリア</th>
-        <td><%= f.select :seat_area, [["バックネット裏エリア"],["一塁側エリア"],["三塁側エリア"],["レフト側エリア"],["ライト側エリア"]], { include_blank: "エリアを選択" } %></td>
+        <td><%= f.select :seat_area, [["バックネット裏エリア"],["一塁側エリア"],["三塁側エリア"],["レフト側エリア"],["ライト側エリア"]], { include_blank: "エリアを選択" }, class: "form-control" %></td>
       </tr>
       <tr>
         <th>座席アルファベット</th>
-        <td><%= f.select :seat_alphabet, [["A"],["B"],["C"],["D"],["E"]], { include_blank: "アルファベットを選択" }%></td>
+        <td><%= f.select :seat_alphabet, [["A"],["B"],["C"],["D"],["E"]], { include_blank: "アルファベットを選択" }, class: "form-control" %></td>
       </tr>
       <tr>
         <th>座席番号</th>
-        <td><%= f.select :seat_number, *[1..100], { include_blank: "番号を選択" } %></td>
+        <td><%= f.select :seat_number, *[1..100], { include_blank: "番号を選択" }, class: "form-control" %></td>
       </tr>
     </table>
     <div class="mt-5 text-center">
