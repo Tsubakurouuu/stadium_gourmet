@@ -11,7 +11,7 @@ class Admin::OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    
+
     # 注文ステータス更新時の処理
     @order.update(order_params)
     redirect_to request.referer
