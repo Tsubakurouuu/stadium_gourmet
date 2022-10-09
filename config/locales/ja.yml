@@ -1,0 +1,9 @@
+ja:
+  enums:
+    order:
+      order_status:
+        in_production: "製作中"
+        complete_production: "製作完了"
+        shipping: "発送中"
+        sent: "発送済み"
+        no_customer: "お客様不在"
