@@ -39,7 +39,13 @@
           <td><%= item.name %></td>
           <td><%= item.category.name %></td>
           <td><%= item.with_tax_price.to_s(:delimited) %></td>
-          <td><%= item.is_active %></td>
+          <td>
+            <% if item.is_active == true %>
+              <span class="text-success font-weight-bold">販売中</span>
+            <% else %>
+              <span class="text-secondary font-weight-bold">販売停止中</span>
+            <% end %>
+          </td>
           <td><%= item.stock %></td>
           <td><%= link_to "Show", admin_store_item_path(@store.id, item.id), class: "btn btn-info" %></td>
         </tbody>
