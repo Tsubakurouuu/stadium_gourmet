@@ -1,6 +1,6 @@
 class Admin::OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = Order.includes(:items).where(items:{ store: current_admin_store})
   end
 
   def show
