@@ -28,7 +28,7 @@ class Admin::ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    @store = Store.find(params[:id])
+    @store = Store.find_by(id: @item.store_id)
     unless @store.id == current_admin_store.id
       redirect_to admin_store_path(current_admin_store.id)
     end
