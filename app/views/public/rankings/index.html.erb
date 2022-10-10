@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="row mt-5 mb-5">
-    <h4 class="mx-auto">人気グルメランキング</h4>
+  <div class="row mt-5 mb-3">
+    <h3 class="mx-auto">人気グルメランキング</h3>
   </div>
   <% @items.each do |item| %>
-    <div class="card p-2 mt-5">
+    <div class="card p-2 mt-3">
       <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
         <div class="row ml-5">
-          <h3><%= item.name %></h3>
+          <h4><%= item.name %></h4>
         </div>
         <div class="row">
           <div class="col-6">
@@ -20,4 +20,7 @@
       <% end %>
     </div>
   <% end %>
+  <div class="row">
+    <h5 style="margin-bottom: 100px;"></h5>
+  </div>
 </div>

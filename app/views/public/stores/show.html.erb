@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row mt-5">
+  <div class="row mt-5 mb-3">
     <h3><%= @store.name %></h3>
   </div>
   <div class="row">
@@ -7,7 +7,7 @@
       <div class="ml-5 mr-5"><%= image_tag @store.get_image(150,150) %></div>
     </div>
     <div class="col-6">
-      <table class="table table-borderless mt-5">
+      <table class="table table-borderless text-center mt-2">
         <tr>
           <th>販売エリア</th>
           <td><%= @store.sale_area.name %></td>
@@ -39,5 +39,8 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="row">
+    <h5 style="margin-bottom: 100px;"></h5>
   </div>
 </div>
