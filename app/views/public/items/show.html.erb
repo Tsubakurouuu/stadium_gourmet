@@ -20,6 +20,9 @@
       <%= f.select :amount, *[1..5], { include_blank: "個数" }, class: "form-control" %>
     </div>
   </div>
+  <div class="row">
+    <div class="mx-auto text-danger"><%= alert %></div>
+  </div>
   <div class="row mt-3" style="justify-content: center;">
     <%= f.submit "カートにいれる", class: "btn btn-primary" %>
   </div>

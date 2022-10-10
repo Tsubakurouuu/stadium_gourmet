@@ -3,6 +3,11 @@ class Public::CartItemsController < ApplicationController
     @cart_item = CartItem.new(cart_item_params)
     @item = Item.find(cart_item_params[:item_id])
     @cart_items = CartItem.all
+    if @cart_item.amount.to_i == 0
+      flash.now[:alert] = "個数を選択してください。"
+      render template: "public/items/show"
+      return
+    end
 
     # 同一商品がカート内にあれば個数を加算する
     @cart_items.each do |cart_item|
@@ -27,7 +32,8 @@ class Public::CartItemsController < ApplicationController
     # カート内のアイテムの店舗情報が同一か確認
     @cart_items.each do |cart_item|
       if cart_item.item.store_id != @cart_item.item.store_id
-        redirect_to request.referer
+        flash.now[:alert] = "1度に複数の店舗から購入することはできません。"
+        render template: "public/items/show"
         return
       end
     end
