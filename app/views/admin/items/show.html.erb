@@ -13,6 +13,10 @@
           <td width="80%"><%= @item.explanation %></td>
         </tr>
         <tr>
+          <th>カテゴリー</th>
+          <td><%= @item.category.name %></td>
+        </tr>
+        <tr>
           <th>値段</th>
           <td><%= @item.without_tax.to_s(:delimited) %>(税込 <%= @item.with_tax_price.to_s(:delimited) %>) 円</td>
         </tr>
