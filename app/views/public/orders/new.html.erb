@@ -30,6 +30,9 @@
         <td><%= f.select :seat_number, *[1..100], { include_blank: "番号を選択" }, class: "form-control" %></td>
       </tr>
     </table>
+    <div class="row">
+      <div class="mx-auto text-danger"><%= alert %></div>
+    </div>
     <div class="mt-5 text-center">
       <%= f.submit "確認画面へ", class: "btn btn-primary", style: "width: 30%" %>
     </div>
