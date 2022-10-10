@@ -65,3 +65,5 @@ gem 'enum_help'
 
 gem 'chartkick'
 gem 'groupdate'
+
+gem 'payjp'
