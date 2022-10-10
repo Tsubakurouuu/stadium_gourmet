@@ -10,7 +10,11 @@
       <table class="table table-borderless mt-5">
         <tr>
           <th>販売エリア</th>
-          <td><%= @store.sale_area.name %></td>
+          <td>
+            <% if current_admin_store.owner_flag == false %>
+              <%= @store.sale_area.name %>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <th>販売商品数</th>

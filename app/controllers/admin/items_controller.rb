@@ -1,6 +1,10 @@
 class Admin::ItemsController < ApplicationController
+  before_action :authenticate_admin_store!, only: [:new, :show, :edit, :destroy]
   def new
     @item = Item.new
+    unless @item.store_id == current_admin_store.id
+      redirect_to admin_store_path(current_admin_store.id)
+    end
   end
 
   def create
@@ -13,10 +17,19 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    if current_admin_store.owner_flag == true
+      return
+    end
+    unless @item.store_id == current_admin_store.id
+      redirect_to admin_store_path(current_admin_store.id)
+    end
   end
 
   def edit
     @item = Item.find(params[:id])
+    unless @item.store_id == current_admin_store.id
+      redirect_to admin_store_path(current_admin_store.id)
+    end
   end
 
   def update
@@ -29,6 +42,10 @@ class Admin::ItemsController < ApplicationController
   def destroy
     store = Store.find(params[:store_id])
     @item = Item.find(params[:id])
+    unless @item.store_id == current_admin_store.id
+      redirect_to admin_store_path(current_admin_store.id)
+      return
+    end
     @item.destroy
     redirect_to admin_store_path(store.id)
   end
