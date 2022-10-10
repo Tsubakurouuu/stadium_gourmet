@@ -1,5 +1,5 @@
 class Admin::ItemsController < ApplicationController
-  before_action :authenticate_admin_store!, only: [:new, :show, :edit, :destroy]
+  before_action :authenticate_admin_store!, only: [:new, :show, :edit]
   def new
     @item = Item.new
     unless @item.store_id == current_admin_store.id
@@ -17,17 +17,19 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @store = Store.find_by(id: @item.store_id)
     if current_admin_store.owner_flag == true
       return
     end
-    unless @item.store_id == current_admin_store.id
+    unless @store.id == current_admin_store.id
       redirect_to admin_store_path(current_admin_store.id)
     end
   end
 
   def edit
     @item = Item.find(params[:id])
-    unless @item.store_id == current_admin_store.id
+    @store = Store.find(params[:id])
+    unless @store.id == current_admin_store.id
       redirect_to admin_store_path(current_admin_store.id)
     end
   end
