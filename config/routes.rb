@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :stores, only: [:index, :show] do
       resources :items, except: [:index]
       resources :orders, only: [:index, :show, :update]
+      resources :data_graphs, only: [:index]
     end
 
   end
