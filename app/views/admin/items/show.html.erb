@@ -37,6 +37,7 @@
       </table>
     </div>
   </div>
+  <% if current_admin_store.owner_flag == false %>
   <div class="row">
     <div class="col-md-3 offset-md-4">
       <%= link_to "編集する", edit_admin_store_item_path(current_admin_store.id, @item.id), class: "btn btn-success", style: "width: 70%" %>
@@ -45,4 +46,5 @@
       <%= link_to "削除する", admin_store_item_path(current_admin_store.id, @item.id), method: :delete, class: "btn btn-danger", style: "width: 70%", data: {confirm: "削除しますか？"} %>
     </div>
   </div>
+  <% end %>
 </div>

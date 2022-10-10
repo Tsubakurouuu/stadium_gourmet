@@ -11,7 +11,7 @@
         <tr>
           <th>販売エリア</th>
           <td>
-            <% if current_admin_store.owner_flag == false %>
+            <% if @store.owner_flag == false %>
               <%= @store.sale_area.name %>
             <% end %>
           </td>
@@ -19,6 +19,14 @@
         <tr>
           <th>販売商品数</th>
           <td><%= @store.items.count %></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>
+            <% if current_admin_store.owner_flag == true %>
+              <%= link_to "注文履歴", admin_store_orders_path(@store.id), class: "btn btn-primary" %>
+            <% end %>
+          </td>
         </tr>
       </table>
     </div>
