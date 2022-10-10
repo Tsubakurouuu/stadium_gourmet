@@ -2,7 +2,12 @@ class Admin::OrdersController < ApplicationController
   before_action :authenticate_admin_store!, only: [:index, :show]
 
   def index
-    @orders = Order.includes(:items).where(items:{store: current_admin_store})
+    # 管理者かどうかの分岐処理を記述
+    if current_admin_store.owner_flag == true
+      @orders = Order.includes(:items).where(params[:store_id])
+    else
+      @orders = Order.includes(:items).where(items:{store: current_admin_store})
+    end
   end
 
   def show
