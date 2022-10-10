@@ -16,7 +16,7 @@
   </div>
   <div>
     <%= form_with model: @order, url: orders_confirm_path, mathod: :post do |f| %>
-    <table class="table　table-bprderless mx-auto">
+    <table class="table　table-borderless mx-auto">
       <tr>
         <th>座席エリア</th>
         <td><%= f.select :seat_area, [["バックネット裏エリア"],["一塁側エリア"],["三塁側エリア"],["レフト側エリア"],["ライト側エリア"]], { include_blank: "エリアを選択" }, class: "form-control" %></td>

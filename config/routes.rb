@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :rankings, only: [:index, :show]
     resources :new_gourmets, only: [:index]
 
-    get 'orders/confirm' => 'orders#new'
+    get 'orders/confirm' => 'orders#error'
     post 'orders/confirm' => 'orders#confirm'
     get 'orders/complete' => 'orders#complete'
   end
