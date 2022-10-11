@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  namespace :public do
+    get 'customers/show'
+  end
   #管理者
   namespace :admin do
     root to: 'homes#top'
@@ -20,6 +22,13 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
 
+    devise_for :customers, controllers: {
+      registrations: "public/registrations",
+      sessions: 'admin/sessions'
+    }
+    
+    get 'customers/info' => 'customers#show'
+    
     resources :stores, only: [:index, :show] do
       resources :items, only: [:show]
     end
