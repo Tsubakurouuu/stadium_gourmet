@@ -24,11 +24,11 @@ Rails.application.routes.draw do
 
     devise_for :customers, controllers: {
       registrations: "public/registrations",
-      sessions: 'admin/sessions'
+      sessions: 'public/sessions'
     }
-    
+
     get 'customers/info' => 'customers#show'
-    
+
     resources :stores, only: [:index, :show] do
       resources :items, only: [:show]
     end

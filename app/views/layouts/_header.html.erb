@@ -11,25 +11,18 @@
           <li class="nav-item">
             <%= link_to "ログアウト", destroy_admin_store_session_path, method: :delete, class: 'nav-link' %>
           </li>
-          <!--管理者ログイン時-->
-          <% if current_admin_store.owner_flag == true %>
-            <li class="nav-item">
-              <%= link_to "店舗一覧", admin_stores_path, class: 'nav-link' %>
-            </li>
-          <% elsif current_admin_store.owner_flag == false %>
-            <li class="nav-item">
-              <%= link_to "店舗ページ", admin_store_path(current_admin_store), class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "商品登録", new_admin_store_item_path(current_admin_store.id), class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "注文履歴", admin_store_orders_path(current_admin_store.id), class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "データ確認", admin_store_data_graphs_path(current_admin_store.id), class: 'nav-link' %>
-            </li>
-          <% end %>
+          <li class="nav-item">
+            <%= link_to "店舗ページ", admin_store_path(current_admin_store), class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "商品登録", new_admin_store_item_path(current_admin_store.id), class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "注文履歴", admin_store_orders_path(current_admin_store.id), class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "データ確認", admin_store_data_graphs_path(current_admin_store.id), class: 'nav-link' %>
+          </li>
         </ul>
       </div>
     </nav>
@@ -50,6 +43,14 @@
           <li class="nav-item">
             <%= link_to "グルメ検索", searches_path, class: 'nav-link' %>
           </li>
+          <% if customer_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "マイページ", customers_info_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
