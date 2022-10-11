@@ -8,7 +8,7 @@ class Public::OrdersController < ApplicationController
     @order.shipping_cost = 200
     @order.order_number = ('A'..'Z').to_a.sample(6)
     @order.save
-    cart_items = CartItem.all
+    cart_items = current_customer.cart_items
 
     #カート内商品を保存
     cart_items.each do |cart_item|
@@ -31,13 +31,20 @@ class Public::OrdersController < ApplicationController
     redirect_to orders_complete_path
   end
 
+  def index
+    @orders = Order.where(customer_id: current_customer.id)
+  end
+
+  def show
+  end
+
   def complete
     @order = Order.all
   end
 
   def confirm
     @order = Order.new(order_params)
-    @cart_items = CartItem.all
+    @cart_items = current_customer.cart_items
     @product_total = 0
     if params[:order][:seat_area].blank? || params[:order][:seat_alphabet].blank? ||  params[:order][:seat_number].blank?
         flash.now[:alert] = "座席情報をすべて入力してください。"
@@ -52,6 +59,6 @@ class Public::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:seat_area, :seat_alphabet, :seat_number, :total_price)
+    params.require(:order).permit(:customer_id, :seat_area, :seat_alphabet, :seat_number, :total_price)
   end
 end

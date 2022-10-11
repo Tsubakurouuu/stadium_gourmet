@@ -5,7 +5,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   # 新規登録後の遷移先
   def after_sign_in_path_for(resource)
-    customers_info_path
+    searches_path
   end
 
   protected

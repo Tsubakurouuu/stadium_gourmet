@@ -27,7 +27,7 @@ class Public::SessionsController < Devise::SessionsController
 
   #ログイン成功後の遷移先
   def after_sign_in_path_for(resource)
-    customers_info_path
+    searches_path
   end
 
   #ログアウト後の遷移先

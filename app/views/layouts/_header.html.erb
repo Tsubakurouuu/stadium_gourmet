@@ -45,7 +45,7 @@
           </li>
           <% if customer_signed_in? %>
             <li class="nav-item">
-              <%= link_to "マイページ", customers_info_path, class: 'nav-link' %>
+              <%= link_to "注文履歴", orders_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
               <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link' %>

@@ -13,18 +13,21 @@
       </div>
     </div>
   </div>
-  <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
-  <div class="row mt-3">
-    <div class="col-3 mx-auto">
-      <%= f.hidden_field :item_id, value: @item.id %>
-      <%= f.select :amount, *[1..5], { include_blank: "個数" }, class: "form-control" %>
+  <% if customer_signed_in? %>
+    <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
+    <div class="row mt-3">
+      <div class="col-3 mx-auto">
+        <%= f.hidden_field :item_id, value: @item.id %>
+        <%= f.hidden_field :customer_id, value: current_customer.id %>
+        <%= f.select :amount, *[1..5], { include_blank: "個数" }, class: "form-control" %>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="mx-auto text-danger"><%= alert %></div>
-  </div>
-  <div class="row mt-3" style="justify-content: center;">
-    <%= f.submit "カートにいれる", class: "btn btn-primary" %>
-  </div>
+    <div class="row">
+      <div class="mx-auto text-danger"><%= alert %></div>
+    </div>
+    <div class="row mt-3" style="justify-content: center;">
+      <%= f.submit "カートにいれる", class: "btn btn-primary" %>
+    </div>
+    <% end %>
   <% end %>
 </div>

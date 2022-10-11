@@ -1,8 +1,11 @@
 class Public::CartItemsController < ApplicationController
+  before_action :authenticate_customer!
+
   def create
     @cart_item = CartItem.new(cart_item_params)
     @item = Item.find(cart_item_params[:item_id])
-    @cart_items = CartItem.all
+
+    @cart_items = current_customer.cart_items
     if @cart_item.amount.to_i == 0
       flash.now[:alert] = "個数を選択してください。"
       render template: "public/items/show"
@@ -44,7 +47,7 @@ class Public::CartItemsController < ApplicationController
   end
 
   def index
-    @cart_items = CartItem.all
+    @cart_items = current_customer.cart_items
     @product_total = 0
   end
 
@@ -64,6 +67,6 @@ class Public::CartItemsController < ApplicationController
   private
 
   def cart_item_params
-    params.require(:cart_item).permit(:item_id, :amount)
+    params.require(:cart_item).permit(:customer_id, :item_id, :amount)
   end
 end

@@ -76,6 +76,7 @@
     </tr>
   </table>
   <%= form_with model: @order, url: orders_path do |f| %>
+    <%= f.hidden_field :customer_id, value: current_customer.id %>
     <%= f.hidden_field :seat_area, value: @order.seat_area %>
     <%= f.hidden_field :seat_alphabet, value: @order.seat_alphabet %>
     <%= f.hidden_field :seat_number, value: @order.seat_number %>

@@ -27,8 +27,6 @@ Rails.application.routes.draw do
       sessions: 'public/sessions'
     }
 
-    get 'customers/info' => 'customers#show'
-
     resources :stores, only: [:index, :show] do
       resources :items, only: [:show]
     end
@@ -36,7 +34,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :show]
     resources :sale_areas, only: [:index, :show]
     resources :cart_items, only: [:create, :index, :update, :destroy]
-    resources :orders, only: [:new, :create]
+    resources :orders, only: [:new, :create, :index, :show]
     resources :searches, only: [:index]
     resources :rankings, only: [:index, :show]
     resources :new_gourmets, only: [:index]
