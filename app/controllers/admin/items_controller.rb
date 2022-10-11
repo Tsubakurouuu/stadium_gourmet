@@ -17,12 +17,8 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @store = Store.find(params[:id])
+    @store = Store.find(params[:store_id])
     if current_admin_store.owner_flag == true
-      return
-    end
-    unless @store.id == @item.store_id
-      redirect_to admin_store_path(current_admin_store.id)
       return
     end
     unless @store.id == current_admin_store.id
