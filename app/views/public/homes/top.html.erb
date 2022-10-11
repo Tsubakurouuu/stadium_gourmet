@@ -1,7 +1,11 @@
-<div class="container-fluid home">
-  <div class="row">
-    <div class="home-letter mx-auto">
-      <h2>ログイン不要！</h2>
+<div class="container">
+  <div class="row home-letter" style="width: 100vw;">
+    <div class="col-8" style="width: 100vw; margin: 0 auto;">
+      <%= link_to "会員登録", new_customer_registration_path, class: "btn btn-primary btn-block" %>
+    </div>
+
+    <div class="col-12 mt-3">
+      <div class="top-btn"><%= link_to "ログイン", new_customer_session_path, class: "btn btn-primary" %></div>
     </div>
   </div>
 </div>

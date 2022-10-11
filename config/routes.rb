@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :public do
-    get 'customers/show'
-  end
   #管理者
   namespace :admin do
     root to: 'homes#top'
