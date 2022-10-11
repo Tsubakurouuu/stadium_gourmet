@@ -2,27 +2,23 @@
   <div class="row mt-5 mb-3">
     <h3 class="mx-auto">新着グルメ</h3>
   </div>
-  <div class="row">
-    <% @items.each do |item| %>
-    <div class="col-6 mt-3">
-      <div class="card">
-        <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
-          <div class="card-img-top"><%= image_tag item.get_image(200,200), style: "width: 100%;" %></div>
-          <h5 class="card-title long-name"><%= item.name %></h5>
-          <table class="table table-borderless table-sm" style="table-layout: fixed;">
-            <tr>
-              <th width="35%">店舗名</th>
-              <td class="long-name" width="65%"><%= item.store.name %></td>
-            </tr>
-            <tr>
-              <th>販売価格</th>
-              <td><%= item.with_tax_price.to_s(:delimited) %> 円</td>
-            </tr>
-          </table>
-        <% end %>
+  <% @items.each do |item| %>
+    <div class="card p-2 mt-3">
+      <div class="row">
+      <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
+        <div class="col-12">
+          <div class="card-img-top"><%= image_tag item.image, style: "width: 100%;" %></div>
+        </div>
+        <div class="col-12 mt-1">
+          <h4><strong><%= item.name %></strong></h4>
+          <h4><strong>¥ <%= item.with_tax_price.to_s(:delimited) %></strong></h4>
+          <p class="explanation-text"><%= item.explanation %></p>
+          <i class="fas fa-store-alt"></i> <span><%= item.store.name%></span>
+        </div>
+      <% end %>
       </div>
     </div>
-    <% end %>
+  <% end %>
   </div>
   <div class="row">
     <h5 style="margin-bottom: 100px;"></h5>

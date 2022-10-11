@@ -4,20 +4,19 @@
   </div>
   <% @items.each do |item| %>
     <div class="card p-2 mt-3">
+      <div class="row">
       <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
-        <div class="row ml-5">
-          <h4><%= item.name %></h4>
+        <div class="col-12">
+          <div class="card-img-top"><%= image_tag item.image, style: "width: 100%;" %></div>
         </div>
-        <div class="row">
-          <div class="col-6">
-            <div><%= image_tag item.get_image(250,250) %></div>
-          </div>
-          <div class="col-6">
-            <h4>¥ <%= item.with_tax_price.to_s(:delimited) %></h4>
-            <p class="explanation-text"><%= item.explanation %></p>
-          </div>
+        <div class="col-12 mt-1">
+          <h4><strong><%= item.name %></strong></h4>
+          <h4><strong>¥ <%= item.with_tax_price.to_s(:delimited) %></strong></h4>
+          <p class="explanation-text"><%= item.explanation %></p>
+          <i class="fas fa-store-alt"></i> <span><%= item.store.name%></span>
         </div>
       <% end %>
+      </div>
     </div>
   <% end %>
   <div class="row">
