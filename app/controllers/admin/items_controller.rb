@@ -2,7 +2,7 @@ class Admin::ItemsController < ApplicationController
   before_action :authenticate_admin_store!, only: [:new, :show, :edit]
   def new
     @item = Item.new
-    unless @item.store_id == current_admin_store.id
+    unless params[:store_id].to_i == current_admin_store.id
       redirect_to admin_store_path(current_admin_store.id)
     end
   end
