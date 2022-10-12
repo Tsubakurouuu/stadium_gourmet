@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 100px;">
-  <div class="card p-2">
+  <div class="card p-2 text-dark">
     <div class="row">
       <div class="col-12">
         <div class="card-img-top"><%= image_tag @item.image, style: "width: 100%;" %></div>
@@ -8,7 +8,7 @@
         <h4><strong><%= @item.name %></strong></h4>
         <h4><strong>¥ <%= @item.with_tax_price.to_s(:delimited) %></strong></h4>
         <p class="explanation-text"><%= @item.explanation %></p>
-        <i class="fas fa-store-alt"></i> <span><%= @item.store.name%></span>
+        <i class="fas fa-store-alt"></i> <span><%= @item.store.name %></span>
       </div>
     </div>
   </div>

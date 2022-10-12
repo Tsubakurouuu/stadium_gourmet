@@ -1,41 +1,19 @@
 <div class="container">
   <div class="row mt-5 mb-3">
-    <h3><%= @store.name %></h3>
+    <h3 class="bg-dark"><%= @store.name %></h3>
   </div>
   <div class="row">
-    <div class="col-6">
-      <div class="ml-5 mr-5"><%= image_tag @store.get_image(150,150) %></div>
-    </div>
-    <div class="col-6">
-      <table class="table table-borderless text-center mt-2">
-        <tr>
-          <th>販売エリア</th>
-          <td><%= @store.sale_area.name %></td>
-        </tr>
-        <tr>
-          <th>販売商品数</th>
-          <td><%= @store.items.count %></td>
-        </tr>
-      </table>
-    </div>
-  </div>
-  <div class="row mt-5">
-    <h4>販売商品一覧</h4>
+    <h4 class="bg-dark">販売商品一覧</h4>
   </div>
   <div class="row">
     <% @items.each do |item| %>
       <div class="col-6 mt-3">
         <div class="card">
           <%= link_to store_item_path(@store.id, item.id), class: "text-dark" do %>
-            <div class="card-img-top"><%= image_tag item.get_image(200,200), style: "width: 100%" %></div><br>
+            <div class="card-img-top"><%= image_tag item.image, style: "width: 100%" %></div><br>
             <h5 class="card-title long-name"><%= item.name %></h5>
-            <table class="table table-borderless">
-              <tr>
-                <th>販売価格</th>
-                <td><%= item.with_tax_price.to_s(:delimited) %> 円</td>
-              </tr>
-            </table>
-        <% end %>
+            ￥ <%= item.with_tax_price.to_s(:delimited) %>
+          <% end %>
         </div>
       </div>
     <% end %>

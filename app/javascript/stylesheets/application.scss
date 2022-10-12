@@ -18,8 +18,8 @@ footer {
 
 body {
   color: #00FF00;
-  // background-image: url("/assets/ykyujo.png");
-  background-position: center;
+  background-image: url("/assets/ykyujo.png");
+  background-position: bottom;
   background-size: cover;
   width: 100vw;
   height: 100vh;
@@ -48,8 +48,14 @@ h3 {
 /* タブレット用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 521px) {
 
+
 }
 /* PC用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 960px) {
+  body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "You Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-seril;
+}
 
 }
