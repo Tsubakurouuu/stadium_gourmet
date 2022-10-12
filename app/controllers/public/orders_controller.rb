@@ -39,7 +39,6 @@ class Public::OrdersController < ApplicationController
   end
 
   def complete
-    @order = Order.all
   end
 
   def confirm
