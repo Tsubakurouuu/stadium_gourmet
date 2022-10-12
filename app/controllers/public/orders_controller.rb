@@ -6,7 +6,7 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.shipping_cost = 200
-    @order.order_number = ('A'..'Z').to_a.sample(6)
+    @order.order_number = SecureRandom.alphanumeric(6)
     @order.save
     cart_items = current_customer.cart_items
 
