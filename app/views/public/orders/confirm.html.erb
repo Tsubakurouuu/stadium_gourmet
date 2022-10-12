@@ -1,88 +1,112 @@
 <div class="container">
   <div class="row mt-5">
-    <h3>注文情報確認</h3>
+    <h3 class="bg-dark">注文情報確認</h3>
   </div>
-  <div class="row mt-3 ml-3">
-    <h4>購入商品</h4>
+  <% @cart_items.each do |cart_item| %>
+    <% @product_total = @product_total + cart_item.subtotal %>
+  <% end %>
+  <div class="card text-dark p-2">
+    <div class="row">
+      <div class="col-6">
+        <p>商品合計</p>
+      </div>
+      <div class="col-6">
+        <p class="text-right"><%= @product_total.to_s(:delimited) %> 円</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <p>送料</p>
+      </div>
+      <div class="col-6">
+        <p class="text-right">200 円</p>
+      </div>
+    </div>
+    <% @total_price = @product_total + 200 %>
+    <div class="row">
+      <div class="col-6">
+        <h4><strong>支払い金額</strong></h4>
+      </div>
+      <div class="col-6">
+        <h4 class="text-right"><strong><%= @total_price.to_s(:delimited) %> 円</strong></h4>
+      </div>
+    </div>
+    <%= form_with model: @order, url: orders_path do |f| %>
+      <%= f.hidden_field :customer_id, value: current_customer.id %>
+      <%= f.hidden_field :seat_area, value: @order.seat_area %>
+      <%= f.hidden_field :seat_alphabet, value: @order.seat_alphabet %>
+      <%= f.hidden_field :seat_number, value: @order.seat_number %>
+      <%= f.hidden_field :total_price, value: @total_price %>
+      <div class="text-center">
+        <%= f.submit "注文を確定する", class: "btn btn-primary text-center", style: "width: 80%;" %>
+      </div>
+    <% end %>
   </div>
-  <div class="row">
-    <% @cart_items.each do |cart_item| %>
-      <div class="card mt-3">
-        <div class="col-12">
+
+  <div class="card mt-3">
+    <div class="row mt-3 ml-3">
+      <h4 class="bg-dark">座席情報</h4>
+    </div>
+    <div class="row mt-3 mb-3">
+      <h5 class="text-dark mx-auto"><%= @order.seat_area %>-<%= @order.seat_alphabet %>-<%= @order.seat_number %></h5>
+    </div>
+  </div>
+  <div class="card mt-3">
+    <div class="row mt-3 ml-3">
+      <h4 class="bg-dark">支払い方法</h4>
+    </div>
+    <div class="row mt-2 mb-3">
+      <p class="text-dark mx-auto">クレジットカード</p>
+    </div>
+  </div>
+  <div class="card mt-3 p-2">
+    <div class="row ml-3">
+      <h4 class="bg-dark">購入商品</h4>
+    </div>
+    <div class="row">
+      <% @cart_items.each do |cart_item| %>
+        <div class="card m-2 p-2 mt-3 text-dark">
           <div class="row">
-            <div class="card-img-top">
-              <%= image_tag cart_item.item.get_image(500,350), style: "width: 100%;" %>
-            </div>
-            <div class="col-6">
-              <div class="row">
-                <h5 class="card-title long-name"><%= cart_item.item.name %></h5>
-              </div>
-              <div class="row ml-3">
-                <p>単価 <%= cart_item.item.with_tax_price.to_s(:delimited) %> 円</p>
-              </div>
-            </div>
             <div class="col-4">
+              <div class="card-img-top"><%= image_tag cart_item.item.image, style: "width: 100%;" %></div>
+            </div>
+            <div class="col-8">
+              <h5 class="card-title long-name"><%= cart_item.item.name %></h5>
               <div class="row">
-                <p>数量: <%= cart_item.amount %></p>
-              </div>
-              <div class="row">
-                <p>小計 <%= cart_item.subtotal.to_s(:delimited) %> 円</p>
+                <div class="col-6">
+                  <p>価格 <%= cart_item.item.with_tax_price.to_s(:delimited) %> 円</p>
+                </div>
+                <div class="col-6">
+                  <p>数量: <%= cart_item.amount %></p>
+                </div>
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-12">
+              <div style= "border: dashed 1px;"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <h5 class="text-left">小計</h5>
+            </div>
+            <div class="col-6">
+              <h5 class= "text-right"><strong><%= cart_item.subtotal.to_s(:delimited) %> 円</strong></h5>
+            </div>
+          </div>
         </div>
-      </div>
-      <% @product_total = @product_total + cart_item.subtotal %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  <div class="row mt-3 ml-3">
-    <h4>支払い方法</h4>
-  </div>
-  <div class="row">
-    <p class="mx-auto">クレジットカード</p>
-  </div>
-  <div class="row mt-3 ml-3">
-    <h4>座席情報</h4>
-  </div>
-  <div class="row mx-auto">
-    <table class="table table-borderless" style="margin-left: 15%;">
-      <tr>
-        <th width="40%">座席エリア</th>
-        <td width="60%"><%= @order.seat_area %></td>
-      </tr>
-      <tr>
-        <th>座席アルファベット</th>
-        <td><%= @order.seat_alphabet %></td>
-      </tr>
-      <tr>
-        <th>座席番号</th>
-        <td><%= @order.seat_number %></td>
-      </tr>
-    </table>
-  </div>
-  <table class="table table-borderless" style="margin-left: 30%;">
-    <tr>
-      <th width="20%">送料</th>
-      <td width="80%">200 円</td>
-    </tr>
-    <tr>
-      <th>商品合計</th>
-      <td><%= @product_total.to_s(:delimited) %> 円</td>
-    </tr>
-    <% @total_price = @product_total + 200 %>
-    <tr>
-      <th>請求金額</th>
-      <td><strong><%= @total_price.to_s(:delimited) %> 円</strong></td>
-    </tr>
-  </table>
   <%= form_with model: @order, url: orders_path do |f| %>
     <%= f.hidden_field :customer_id, value: current_customer.id %>
     <%= f.hidden_field :seat_area, value: @order.seat_area %>
     <%= f.hidden_field :seat_alphabet, value: @order.seat_alphabet %>
     <%= f.hidden_field :seat_number, value: @order.seat_number %>
     <%= f.hidden_field :total_price, value: @total_price %>
-    <div class="text-center">
-      <%= f.submit "注文を確定する", class: "btn btn-primary text-center", style: "width: 30%;" %>
+    <div class="text-center mt-3 mb-3">
+      <%= f.submit "注文を確定する", class: "btn btn-primary text-center", style: "width: 80%;" %>
     </div>
   <% end %>
   <div class="row">
