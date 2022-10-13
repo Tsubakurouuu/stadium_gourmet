@@ -29,12 +29,14 @@
   <div class="row">
     <% @items.each do |item| %>
       <div class="col-6 mt-3">
-        <div class="card">
-          <%= link_to store_item_path(@store.id, item.id), class: "text-dark" do %>
-            <div class="card-img-top"><%= image_tag item.image, style: "width: 100%" %></div>
-            <h5 class="card-title long-name"><%= item.name %></h5>
-            ￥ <%= item.with_tax_price.to_s(:delimited) %>
-          <% end %>
+        <div class="row">
+          <div class="card mx-auto" style="width: 95%">
+            <%= link_to store_item_path(@store.id, item.id), class: "text-dark" do %>
+              <div class="card-img-top"><%= image_tag item.image, style: "width: 100%;" %></div>
+              <h5 class="card-title long-name"><%= item.name %></h5>
+              ￥ <%= item.with_tax_price.to_s(:delimited) %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

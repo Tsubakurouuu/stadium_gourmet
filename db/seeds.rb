@@ -409,7 +409,7 @@ item.image.attach(io: File.open(Rails.root.join('app/assets/images/tekira.jpg'))
 #31
 item = Item.create!(
   store_id: "8",
-  category_id: "6",
+  category_id: "4",
   name: "日本酒",
   explanation: "原料は主に、米・水・米麹 (デンプンを糖に変える働きを持つカビ菌)・酵母菌 (糖を分解してアルコール発酵させる菌)・乳酸菌をメインに造られています。",
   without_tax: "510",
@@ -419,7 +419,7 @@ item.image.attach(io: File.open(Rails.root.join('app/assets/images/nihonsyu.jpg'
 #32
 item = Item.create!(
   store_id: "9",
-  category_id: "6",
+  category_id: "2",
   name: "牡蠣",
   explanation: "生はもちろん、煮ても焼いても揚げても美味しい海の恵み、牡蠣。ぷりぷりの食感と濃厚で深みのある味わいは、ほかの貝類にはない牡蠣特有の魅力です。",
   without_tax: "570",

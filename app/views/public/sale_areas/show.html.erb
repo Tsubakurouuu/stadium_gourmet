@@ -5,17 +5,19 @@
   <div class="row">
     <% @stores.each do |store| %>
     <div class="col-6 mt-3">
-      <div class="card">
-        <%= link_to store_path(store.id), class: "text-dark" do %>
-        <div class="card-img-top"><%= image_tag store.image, style: "width: 100%;" %></div>
-        <table class="table table-borderless table-sm" style="table-layout: fixed;">
-          <tr>
-            <th width="15%"><i class="fas fa-store-alt"></i></th>
-            <td class="card-title long-name" width="85%"><strong><%= store.name %></strong></td>
-          </tr>
-        </table>
-        <p class="text-center">販売商品数:<span class="ml-3"><%= store.items.count %></span></p>
-        <% end %>
+      <div class="row">
+        <div class="card mx-auto" style="width: 95%;">
+          <%= link_to store_path(store.id), class: "text-dark" do %>
+          <div class="card-img-top"><%= image_tag store.image, style: "width: 100%;" %></div>
+          <table class="table table-borderless table-sm" style="table-layout: fixed;">
+            <tr>
+              <th width="15%"><i class="fas fa-store-alt"></i></th>
+              <td class="card-title long-name" width="85%"><strong><%= store.name %></strong></td>
+            </tr>
+          </table>
+          <p class="text-center">販売商品数:<span class="ml-3"><%= store.items.count %></span></p>
+          <% end %>
+        </div>
       </div>
     </div>
     <% end %>
