@@ -29,7 +29,7 @@ class Public::SessionsController < Devise::SessionsController
   def guest_sign_in
     customer = Customer.guest
     sign_in customer
-    redirect_to searches_path, notice: 'guestuserでログインしました。'
+    redirect_to searches_path
   end
 
   #ログイン成功後の遷移先
