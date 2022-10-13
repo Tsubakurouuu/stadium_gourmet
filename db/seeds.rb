@@ -34,6 +34,7 @@ store = Store.create!(
   owner_flag: "false",
 )
 store.image.attach(io: File.open(Rails.root.join('app/assets/images/ramen.png')), filename: 'ramen.png')
+
 #4
 store = Store.create!(
   name: "フルーツ王国",
@@ -99,7 +100,7 @@ store.image.attach(io: File.open(Rails.root.join('app/assets/images/osakana.png'
 item = Item.create!(
   store_id: "3",
   category_id: "3",
-  name: "世界一美味しい家系ラーメン",
+  name: "家系ラーメン",
   explanation: "1974年以降に登場した神奈川県横浜市発祥の豚骨醤油ベースで太いストレート麺を特徴とするラーメンおよびそのラーメン店群です。 元々屋号に「○○家」とついているところが多かったところから、家系と呼ばれるようになりました。",
   without_tax: "950",
 )
@@ -109,7 +110,7 @@ item.image.attach(io: File.open(Rails.root.join('app/assets/images/ieramen.jpg')
 item = Item.create!(
   store_id: "2",
   category_id: "2",
-  name: "最強の麻婆豆腐",
+  name: "麻婆豆腐",
   explanation: "豚ひき肉とねぎ・しょうがのみじん切りを炒めてスープを加え、しょうゆ・豆板醤(トウバンジャン)・豆豉(トウチ)・花椒（中国料理で用いられるさんしょう）などで調味した中に、さいの目に切った豆腐を入れて少し煮込み、水溶き片栗粉でとろみをつけたもの。",
   without_tax: "1250",
 )
@@ -119,7 +120,7 @@ item.image.attach(io: File.open(Rails.root.join('app/assets/images/mabo.jpg')), 
 item = Item.create!(
   store_id: "3",
   category_id: "3",
-  name: "世界一美味しいつけ麺",
+  name: "つけ麺",
   explanation: "麺をつゆにつけて食べるスタイルの麺類で、今日においては、主にラーメンの一種ともされる日本の麺料理である。",
   without_tax: "1000",
 )
@@ -144,6 +145,306 @@ item = Item.create!(
   without_tax: "700",
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/kurepu.jpg')), filename: 'kurepu.jpg')
+
+#6
+item = Item.create!(
+  store_id: "2",
+  category_id: "2",
+  name: "青椒肉絲",
+  explanation: "中国料理の一つ。 ピーマンと豚肉の細切り炒め。 細切りにして下味をつけた豚肉と細切りにしたピーマンやたけのこを油通ししてから炒め、しょうゆ・砂糖・紹興酒・オイスターソースなどの調味料とスープ、水溶き片栗粉を加えて仕上げる。",
+  without_tax: "1300",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/tinjao.jpg')), filename: 'tinjao.jpg')
+
+#7
+item = Item.create!(
+  store_id: "2",
+  category_id: "2",
+  name: "回鍋肉",
+  explanation: "「回鍋」は「鍋に戻す」という意味で、すでに調理済みの料理を温め直すこと。 よって本来は、塊のまま一度煮た豚肉を切って鍋に戻し、油で炒め直した料理をいう。 日本における家庭用中華料理としては、豚肉の味噌炒めとみなされていることが多い。",
+  without_tax: "1100",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/hoiko.jpg')), filename: 'hoiko.jpg')
+
+#8
+item = Item.create!(
+  store_id: "2",
+  category_id: "4",
+  name: "餃子",
+  explanation: "小麦粉を原料とした皮で、肉・エビ・野菜などで作った餡を包み、茹でる・焼く・蒸す・揚げるなどの方法で調理した食べ物である。成形後の加熱調理方法の違いによって、水（茹で）餃子・焼き餃子・蒸し餃子・揚げ餃子などと呼ばれる。",
+  without_tax: "650",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/gyoza.jpg')), filename: 'gyoza.jpg')
+
+#9
+item = Item.create!(
+  store_id: "2",
+  category_id: "4",
+  name: "焼売",
+  explanation: "豚の挽肉を小麦粉の皮で包み蒸し調理した中華料理の点心と日本では認識されているが、後述のように豚肉以外の肉を使うこともあり（肉類を使わないものもある）、皮も小麦粉以外のこともあれば、皮を用いない焼売もあって、明確な定義は存在していない。",
+  without_tax: "620",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/syumai.jpg')), filename: 'syumai.jpg')
+
+#10
+item = Item.create!(
+  store_id: "2",
+  category_id: "4",
+  name: "春巻き",
+  explanation: "中国料理のチュンチュワン。 立春につくるチュンピン（春餅）に由来。 小麦粉を薄く円形に焼いて皮とし，豚肉，シイタケ，ニラなどを細切りにしていためたものを入れ，巻き包んで油であげる。 点心の一つで軽食，副菜などにもする。",
+  without_tax: "590",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/harumaki.jpg')), filename: 'harumaki.jpg')
+
+#10
+item = Item.create!(
+  store_id: "2",
+  category_id: "6",
+  name: "台湾ビール",
+  explanation: "台湾ビール（たいわんビール、中国語: 台灣啤酒、タイワンピージョウ、英文：Taiwan Beer）は台湾の台湾煙酒公司（中国語版）が醸造・販売しているビールで、台湾最大のビール・ブランドである。",
+  without_tax: "740",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/taiwanbiru.jpg')), filename: 'taiwanbiru.jpg')
+
+#11
+item = Item.create!(
+  store_id: "3",
+  category_id: "3",
+  name: "台湾ラーメン",
+  explanation: "ひき肉とにんにく、ニラや唐辛子などを炒め、醤油ラーメンに加えた辛い麺料理のこと。 名古屋のご当地グルメを名古屋めしと呼びますが、そのなかのひとつとして有名です。",
+  without_tax: "880",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/taiwanramen.jpg')), filename: 'taiwanramen.jpg')
+
+#12
+item = Item.create!(
+  store_id: "3",
+  category_id: "3",
+  name: "博多ラーメン",
+  explanation: "豚骨でとった白濁のスープと極細の麺が特徴の、福岡県を代表する名物グルメです。 博多ラーメンのトッピングはシンプルで、途中で紅ショウガや辛子高菜で味を変えて食べるのが一般的。 また、博多ラーメンは、やわらかめから硬めまで、麺の硬さを好みで選べるのも特徴です。",
+  without_tax: "950",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/hakatara.jpg')), filename: 'hakatara.jpg')
+
+#13
+item = Item.create!(
+  store_id: "4",
+  category_id: "5",
+  name: "アップルパイ",
+  explanation: "甘煮にしたりんごをパイ生地で包んだ、いわゆる焼き菓子の1つとされています。 皮はサクッと、中（りんご）はしっとりという食感が特徴。 砂糖のみで味付けされたアップルパイが多い中、シナモンやナツメグといったスパイスを効かせたものもあります。",
+  without_tax: "580",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/appurupai.jpg')), filename: 'appurupai.jpg')
+
+#14
+item = Item.create!(
+  store_id: "4",
+  category_id: "5",
+  name: "ガトーショコラ",
+  explanation: "フランス語で、直訳すると「焼いたチョコレート菓子」という意味になり、本来は焼いて作ったチョコレート菓子全般を指します。 日本では、チョコレートを生地に混ぜ込んで焼いたケーキがガトーショコラと呼ばれています。",
+  without_tax: "520",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/gato.jpg')), filename: 'gato.jpg')
+
+#15
+item = Item.create!(
+  store_id: "4",
+  category_id: "5",
+  name: "シュークリーム",
+  explanation: "中が空洞になるように焼いた生地にカスタードクリームなどを詰めた洋菓子の一種。フランス語で「chou à la crème」（シュー・ア・ラ・クレーム）と呼ばれる菓子である。",
+  without_tax: "330",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/shuuu.jpg')), filename: 'shuuu.jpg')
+
+#16
+item = Item.create!(
+  store_id: "4",
+  category_id: "5",
+  name: "ドーナツ",
+  explanation: "小麦粉が主成分の生地に水・砂糖・バター・卵などを加えたものであり、一般的には、油脂で揚げた揚げ菓子の一種類である。内側はしっとりふんわりしたケーキのような食感のものや、モチモチした食感のものなどがあり、形状はリング状が多く、ボール状のものなどもある。",
+  without_tax: "400",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/donatu.jpg')), filename: 'donatu.jpg')
+
+#17
+item = Item.create!(
+  store_id: "4",
+  category_id: "5",
+  name: "マドレーヌ",
+  explanation: "フランス発祥の焼き菓子で、バターケーキの一種。フランスのロレーヌ地方・コメルシーのものが有名です。バニラと柑橘で風味付けされることが多く、バターが甘く香る、ふんわりした素朴な味わいが特徴。",
+  without_tax: "440",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/madore.jpg')), filename: 'madore.jpg')
+
+#18
+item = Item.create!(
+  store_id: "5",
+  category_id: "2",
+  name: "天丼",
+  explanation: "丼鉢に盛った飯の上に天ぷらを載せた日本の丼物。天ぷら丼（てんぷらどんぶり）の略称であるが、今日ではもっぱら「天丼」と呼ばれている。",
+  without_tax: "830",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/tendon.jpg')), filename: 'tendon.jpg')
+
+#19
+item = Item.create!(
+  store_id: "5",
+  category_id: "2",
+  name: "天丼",
+  explanation: "丼鉢に盛った飯の上に天ぷらを載せた日本の丼物。天ぷら丼（てんぷらどんぶり）の略称であるが、今日ではもっぱら「天丼」と呼ばれている。",
+  without_tax: "830",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/tendon.jpg')), filename: 'tendon.jpg')
+
+#20
+item = Item.create!(
+  store_id: "5",
+  category_id: "2",
+  name: "うな重",
+  explanation: "鰻丼（うなぎどんぶり、略称:うなどん、英: Charcoal Grilled-Style Unagi Eel on Rice）は、日本の丼料理。丼鉢に盛った白飯の上に鰻の蒲焼を載せたもの。",
+  without_tax: "1800",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/unaju.jpg')), filename: 'unaju.jpg')
+
+#21
+item = Item.create!(
+  store_id: "5",
+  category_id: "2",
+  name: "そぼろ丼",
+  explanation: "そぼろ（素朧）は、牛や豚や鶏の挽肉、魚肉やエビをゆでてほぐしたもの、溶き卵などを、そのままあるいは調味して、汁気がなくなりぱらぱらになるまで炒った食品。",
+  without_tax: "830",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/soboro.jpg')), filename: 'soboro.jpg')
+
+#22
+item = Item.create!(
+  store_id: "6",
+  category_id: "2",
+  name: "海鮮カレー",
+  explanation: "エビ、ホタテ、イカ、などといった海産物を具として利用したカレーのこと。",
+  without_tax: "1300",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/kaikare.jpg')), filename: 'kaikare.jpg')
+
+#23
+item = Item.create!(
+  store_id: "6",
+  category_id: "2",
+  name: "ドライカレー",
+  explanation: "水分をいれずに作るカレー。ガーリックライスやバターライスなどと食すことが多い。ドライカレーと米飯を混ぜて炒めることもある。",
+  without_tax: "970",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/karepira.jpg')), filename: 'karepira.jpg')
+
+#24
+item = Item.create!(
+  store_id: "6",
+  category_id: "2",
+  name: "グリーンカレー",
+  explanation: "タイ料理の一つ。グリーンカレーペーストを炒め、鶏肉・なすなどの具材、ココナッツミルクを加えて煮込み、ナンプラーなどで味を調えたもの。",
+  without_tax: "890",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/gurikare.jpg')), filename: 'gurikare.jpg')
+
+#25
+item = Item.create!(
+  store_id: "7",
+  category_id: "1",
+  name: "焼肉弁当",
+  explanation: "肉は筋肉の材料となるタンパク質源。肉を意識して摂るようにすると筋肉がつきやすくなるので、代謝アップにつながります。",
+  without_tax: "1340",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/yakiben.jpg')), filename: 'yakiben.jpg')
+
+#26
+item = Item.create!(
+  store_id: "7",
+  category_id: "1",
+  name: "幕の内弁当",
+  explanation: "白飯と数種類の副食（おかず）からなる弁当である。長い歴史を持ち、細かな定義や特徴については諸説ある。",
+  without_tax: "1460",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/maku.jpg')), filename: 'maku.jpg')
+
+#27
+item = Item.create!(
+  store_id: "7",
+  category_id: "1",
+  name: "トンカツ弁当",
+  explanation: "豚カツ（とんかつ）は、厚みのある豚のロースやヒレのスライス肉を、小麦粉・溶き卵・パン粉をまとわせて食用油で揚げた料理である。",
+  without_tax: "1290",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/tonben.jpg')), filename: 'tonben.jpg')
+
+#28
+item = Item.create!(
+  store_id: "8",
+  category_id: "6",
+  name: "ローザロッサ",
+  explanation: "イタリア語で“赤い坂”の意味。命名者は、岡 真木氏。アマレットの琥珀色とやわらかな甘味は、意外と赤ワインと相性がよい。イタリア生まれのアマレットには、渋みの穏やかなイタリアワインを合わせたい。",
+  without_tax: "650",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/roza.jpg')), filename: 'roza.jpg')
+
+#29
+item = Item.create!(
+  store_id: "8",
+  category_id: "6",
+  name: "ブルーキュラソー",
+  explanation: "青く着色したキュラソー。ブルーハワイなどのカクテルに用いる。",
+  without_tax: "650",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/kyura.jpg')), filename: 'kyura.jpg')
+
+#30
+item = Item.create!(
+  store_id: "8",
+  category_id: "6",
+  name: "テキーラ",
+  explanation: "リキュールを楽しむ場合、その殆どがテキーラをベースとしたカクテルです。もちろん、ショットやストレート、ロックなど、割材を使わずに飲まれることもありますが、基本的には蒸留酒ですのでアルコール度数が高く、さまざまなカクテルなどに使用されることが多いようです。",
+  without_tax: "520",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/tekira.jpg')), filename: 'tekira.jpg')
+
+#31
+item = Item.create!(
+  store_id: "8",
+  category_id: "6",
+  name: "日本酒",
+  explanation: "原料は主に、米・水・米麹 (デンプンを糖に変える働きを持つカビ菌)・酵母菌 (糖を分解してアルコール発酵させる菌)・乳酸菌をメインに造られています。",
+  without_tax: "510",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/nihonsyu.jpg')), filename: 'nihonsyu.jpg')
+
+#32
+item = Item.create!(
+  store_id: "9",
+  category_id: "6",
+  name: "牡蠣",
+  explanation: "生はもちろん、煮ても焼いても揚げても美味しい海の恵み、牡蠣。ぷりぷりの食感と濃厚で深みのある味わいは、ほかの貝類にはない牡蠣特有の魅力です。",
+  without_tax: "570",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/kaki.jpg')), filename: 'kaki.jpg')
+
+#33
+item = Item.create!(
+  store_id: "9",
+  category_id: "6",
+  name: "ネギトロ&サーモン丼",
+  explanation: "日本で生まれたマグロを生で食する調理法で、マグロのトロまたは中骨に付く「中落ち」や腹などの「すき身」をたたき、ネギ、サーモンと合わせたものである。",
+  without_tax: "570",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/samonebi.jpg')), filename: 'samonebi.jpg')
+
+#34
+item = Item.create!(
+  store_id: "9",
+  category_id: "6",
+  name: "ネギトロ&サーモン丼",
+  explanation: "日本で生まれたマグロを生で食する調理法で、マグロのトロまたは中骨に付く「中落ち」や腹などの「すき身」をたたき、ネギ、サーモンと合わせたものである。",
+  without_tax: "570",
+)
+item.image.attach(io: File.open(Rails.root.join('app/assets/images/samonebi.jpg')), filename: 'samonebi.jpg')
 
 #カテゴリー初期データ
 Category.create!(name: "弁当")
