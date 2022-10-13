@@ -1,37 +1,39 @@
 <div class="container">
   <div class="row mt-5">
-    <h2>商品新規登録</h2>
+    <h2 class="bg-dark">商品新規登録</h2>
   </div>
-  <div class="row mt-5">
-    <div class="col-md-10 offset-md-2">
-      <%= form_with model: [@store, @item], url: admin_store_items_path do |f| %>
-        <table class="table table-borderless">
-          <tr>
-            <th width="13%">商品画像</td>
-            <td><%= f.file_field :image, accept: "image/*" %></td>
-          </tr>
-          <tr>
-            <th>商品名</th>
-            <td><%= f.text_field :name, size: "40" %></td>
-          </tr>
-          <tr>
-            <th>商品説明</th>
-            <td><%= f.text_area :explanation, size: "60x5" %></td>
-          </tr>
-          <tr>
-            <th>カテゴリー</th>
-            <td><%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "--選択してください--"} %></td>
-          </tr>
-          <tr>
-            <th>値段</th>
-            <td><%= f.text_field :without_tax %>円</td>
-          </tr>
-          <tr>
-            <th></th>
-            <td><%= f.submit "登録する", class: "btn btn-success", style: "width: 30%" %></td>
-          </tr>
-        </table>
-      <% end %>
+  <div class="card p-3">
+    <div class="row">
+      <div class="col-md-10 offset-md-2">
+        <%= form_with model: [@store, @item], url: admin_store_items_path do |f| %>
+          <table class="table table-borderless">
+            <tr>
+              <th width="13%">商品画像</td>
+              <td><%= f.file_field :image, accept: "image/*" %></td>
+            </tr>
+            <tr>
+              <th>商品名</th>
+              <td><%= f.text_field :name, size: "40" %></td>
+            </tr>
+            <tr>
+              <th>商品説明</th>
+              <td><%= f.text_area :explanation, size: "60x5" %></td>
+            </tr>
+            <tr>
+              <th>カテゴリー</th>
+              <td><%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "--選択してください--"} %></td>
+            </tr>
+            <tr>
+              <th>値段</th>
+              <td><%= f.text_field :without_tax %>円</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td><%= f.submit "登録する", class: "btn btn-success", style: "width: 30%" %></td>
+            </tr>
+          </table>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row mt-5">
-    <h2>注文履歴詳細</h2>
+    <h2 class="bg-dark">注文履歴詳細</h2>
   </div>
   <div class="row">
-    <table class="table table-borderless mt-3">
+    <table class="table table-border table-light table-striped table-hover">
       <tr>
         <th>注文番号</th>
         <td><%= @order.order_number %></td>
@@ -41,7 +41,7 @@
   </div>
   <div class="row mt-2">
     <div class="col-md-9">
-      <table class="table">
+      <table class="table table-border table-light  table-striped table-hover">
         <thead>
           <th></th>
           <th>商品名</th>
@@ -62,7 +62,7 @@
       </table>
     </div>
     <div class="col-md-3 mt-5">
-      <table class="table table-borderless">
+      <table class="table table-border table-light  table-striped table-hover">
         <tr>
           <th>商品合計</th>
           <td><%= @product_total.to_s(:delimited) %>円</td>
