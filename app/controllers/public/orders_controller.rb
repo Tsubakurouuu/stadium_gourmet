@@ -1,4 +1,5 @@
 class Public::OrdersController < ApplicationController
+  before_action :authenticate_customer!, only: [:show]
   def new
     @order = Order.new
   end
@@ -39,6 +40,9 @@ class Public::OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order_details = @order.order_details
     @product_total = 0
+    unless @order.customer_id == current_customer.id
+      redirect_to searches_path
+    end
   end
 
   def complete
