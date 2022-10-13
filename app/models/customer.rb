@@ -6,4 +6,11 @@ class Customer < ApplicationRecord
 
   has_many :cart_items, dependent: :destroy
   has_many :orders, dependent: :destroy
+
+  def self.guest
+    find_or_create_by!(nickname: 'guestuser' ,email: 'guest@example.com') do |customer|
+      customer.password = SecureRandom.urlsafe_base64
+      customer.nickname = "guestuser"
+    end
+  end
 end
