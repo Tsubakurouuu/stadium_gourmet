@@ -32,6 +32,10 @@ Rails.application.routes.draw do
       resources :items, only: [:show]
     end
 
+    get 'orders/confirm' => 'orders#error'
+    post 'orders/confirm' => 'orders#confirm'
+    get 'orders/complete' => 'orders#complete'
+
     resources :categories, only: [:index, :show]
     resources :sale_areas, only: [:index, :show]
     resources :cart_items, only: [:create, :index, :update, :destroy]
@@ -39,10 +43,6 @@ Rails.application.routes.draw do
     resources :searches, only: [:index]
     resources :rankings, only: [:index, :show]
     resources :new_gourmets, only: [:index]
-
-    get 'orders/confirm' => 'orders#error'
-    post 'orders/confirm' => 'orders#confirm'
-    get 'orders/complete' => 'orders#complete'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
