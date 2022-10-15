@@ -10,4 +10,41 @@
       <%= link_to "ログイン", new_customer_session_path, class: "btn btn-primary mx-auto w-50", style: "line-height: 50px;" %>
     </div>
   <% end %>
+  <div class="row mt-5 mb-3">
+    <h3 class="mx-auto bg-dark">新着グルメ</h3>
+  </div>
+  <% @items_new.each do |item| %>
+    <div class="card p-2 mt-3">
+      <div class="row">
+      <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
+        <div class="col-12">
+          <div class="card-img-top"><%= image_tag item.image, style: "width: 100%;" %></div>
+        </div>
+        <div class="col-12 mt-1">
+          <h4><strong><%= item.name %></strong></h4>
+          <h4><strong>¥ <%= item.with_tax_price.to_s(:delimited) %></strong></h4>
+          <p class="explanation-text"><%= item.explanation %></p>
+          <i class="fas fa-store-alt"></i> <span><%= item.store.name%></span>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% @items_rank.each do |item| %>
+    <div class="card p-2 mt-3">
+      <div class="row">
+      <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
+        <div class="col-12">
+          <div class="card-img-top"><%= image_tag item.image, style: "width: 100%;" %></div>
+        </div>
+        <div class="col-12 mt-1">
+          <h4><strong><%= item.name %></strong></h4>
+          <h4><strong>¥ <%= item.with_tax_price.to_s(:delimited) %></strong></h4>
+          <p class="explanation-text"><%= item.explanation %></p>
+          <i class="fas fa-store-alt"></i> <span><%= item.store.name %></span>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>

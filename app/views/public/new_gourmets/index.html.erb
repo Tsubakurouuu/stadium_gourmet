@@ -2,7 +2,7 @@
   <div class="row mt-5 mb-3">
     <h3 class="mx-auto bg-dark">新着グルメ</h3>
   </div>
-  <% @items.each do |item| %>
+  <% @items_new.each do |item| %>
     <div class="card p-2 mt-3">
       <div class="row">
       <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
