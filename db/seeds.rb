@@ -290,23 +290,13 @@ item.image.attach(io: File.open(Rails.root.join('app/assets/images/tendon.jpg'))
 item = Item.create!(
   store_id: "5",
   category_id: "2",
-  name: "天丼",
-  explanation: "丼鉢に盛った飯の上に天ぷらを載せた日本の丼物。天ぷら丼（てんぷらどんぶり）の略称であるが、今日ではもっぱら「天丼」と呼ばれている。",
-  without_tax: "830",
-)
-item.image.attach(io: File.open(Rails.root.join('app/assets/images/tendon.jpg')), filename: 'tendon.jpg')
-
-#20
-item = Item.create!(
-  store_id: "5",
-  category_id: "2",
   name: "うな重",
   explanation: "鰻丼（うなぎどんぶり、略称:うなどん、英: Charcoal Grilled-Style Unagi Eel on Rice）は、日本の丼料理。丼鉢に盛った白飯の上に鰻の蒲焼を載せたもの。",
   without_tax: "1800",
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/unaju.jpg')), filename: 'unaju.jpg')
 
-#21
+#20
 item = Item.create!(
   store_id: "5",
   category_id: "2",
@@ -316,7 +306,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/soboro.jpg')), filename: 'soboro.jpg')
 
-#22
+#21
 item = Item.create!(
   store_id: "6",
   category_id: "2",
@@ -326,7 +316,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/kaikare.jpg')), filename: 'kaikare.jpg')
 
-#23
+#22
 item = Item.create!(
   store_id: "6",
   category_id: "2",
@@ -336,7 +326,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/karepira.jpg')), filename: 'karepira.jpg')
 
-#24
+#23
 item = Item.create!(
   store_id: "6",
   category_id: "2",
@@ -346,7 +336,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/gurikare.jpg')), filename: 'gurikare.jpg')
 
-#25
+#24
 item = Item.create!(
   store_id: "7",
   category_id: "1",
@@ -356,7 +346,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/yakiben.jpg')), filename: 'yakiben.jpg')
 
-#26
+#25
 item = Item.create!(
   store_id: "7",
   category_id: "1",
@@ -366,7 +356,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/maku.jpg')), filename: 'maku.jpg')
 
-#27
+#26
 item = Item.create!(
   store_id: "7",
   category_id: "1",
@@ -376,7 +366,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/tonben.jpg')), filename: 'tonben.jpg')
 
-#28
+#27
 item = Item.create!(
   store_id: "8",
   category_id: "6",
@@ -386,7 +376,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/roza.jpg')), filename: 'roza.jpg')
 
-#29
+#28
 item = Item.create!(
   store_id: "8",
   category_id: "6",
@@ -396,7 +386,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/kyura.jpg')), filename: 'kyura.jpg')
 
-#30
+#29
 item = Item.create!(
   store_id: "8",
   category_id: "6",
@@ -406,7 +396,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/tekira.jpg')), filename: 'tekira.jpg')
 
-#31
+#30
 item = Item.create!(
   store_id: "8",
   category_id: "4",
@@ -416,7 +406,7 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/nihonsyu.jpg')), filename: 'nihonsyu.jpg')
 
-#32
+#31
 item = Item.create!(
   store_id: "9",
   category_id: "2",
@@ -426,25 +416,16 @@ item = Item.create!(
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/kaki.jpg')), filename: 'kaki.jpg')
 
-#33
+#32
 item = Item.create!(
   store_id: "9",
   category_id: "6",
   name: "ネギトロ&サーモン丼",
   explanation: "日本で生まれたマグロを生で食する調理法で、マグロのトロまたは中骨に付く「中落ち」や腹などの「すき身」をたたき、ネギ、サーモンと合わせたものである。",
-  without_tax: "570",
+  without_tax: "970",
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/samonebi.jpg')), filename: 'samonebi.jpg')
 
-#34
-item = Item.create!(
-  store_id: "9",
-  category_id: "6",
-  name: "ネギトロ&サーモン丼",
-  explanation: "日本で生まれたマグロを生で食する調理法で、マグロのトロまたは中骨に付く「中落ち」や腹などの「すき身」をたたき、ネギ、サーモンと合わせたものである。",
-  without_tax: "570",
-)
-item.image.attach(io: File.open(Rails.root.join('app/assets/images/samonebi.jpg')), filename: 'samonebi.jpg')
 
 #カテゴリー初期データ
 Category.create!(name: "弁当")
