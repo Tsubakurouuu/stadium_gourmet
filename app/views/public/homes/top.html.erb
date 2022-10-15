@@ -4,9 +4,11 @@
   </h1>
   <nav id="menubar" class="w-100 text-center">
     <ul style="list-style: none; padding-left: 0;">
-      <li>
-        <a href="#rogin">Log In</a>
-      </li>
+      <% unless customer_signed_in? %>
+        <li>
+          <a href="#rogin">Log In</a>
+        </li>
+      <% end %>
       <li>
         <a href="#new">New Gourmet</a>
       </li>
@@ -77,4 +79,7 @@
       </div>
     <% end %>
   </section>
+  <div class="row">
+    <h5 style="margin-bottom: 100px;"></h5>
+  </div>
 </div>

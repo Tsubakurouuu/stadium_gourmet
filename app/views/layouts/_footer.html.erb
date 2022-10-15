@@ -1,7 +1,7 @@
 <footer class="fixed-bottom">
   <% if admin_store_signed_in? %>
     <div style="height: 50px; background-color: #c22a1f"></div>
-  <% else %>
+  <% elsif customer_signed_in? %>
     <div style="height: 50px; background-color: #a6ce39"></div>
   <% end %>
 </footer>
