@@ -1,6 +1,28 @@
+<header id="home">
+  <h1 id="logo" class="text-center">
+    <a href="/">StadiumGourmet</a>
+  </h1>
+  <nav id="menubar" class="w-100 text-center">
+    <ul style="list-style: none; padding-left: 0;">
+      <li>
+        <a href="#rogin">Log In</a>
+      </li>
+      <li>
+        <a href="#new">New Gourmet</a>
+      </li>
+      <li>
+        <a href="#ranking">Gourmet Ranking</a>
+      </li>
+    </ul>
+  </nav>
+</header>
 <div class="container">
   <% unless customer_signed_in? %>
-    <div class="row" style="margin-top: 300px; height: 50px;">
+  <section id="rogin">
+    <div class="row mt-5 mb-3">
+      <h3 class="mx-auto bg-dark">ログイン</h3>
+    </div>
+    <div class="row" style="margin-top: 50px; height: 50px;">
       <%= link_to 'ゲストログイン', customers_guest_sign_in_path, class: "btn btn-secondary mx-auto w-50 sign_in", style: "line-height: 50px;", method: :post %>
     </div>
     <div class="row" style="margin-top: 50px; height: 50px;">
@@ -9,6 +31,7 @@
     <div class="row" style="margin-top: 50px; height: 50px;">
       <%= link_to "ログイン", new_customer_session_path, class: "btn btn-primary mx-auto w-50", style: "line-height: 50px;" %>
     </div>
+  </section>
   <% end %>
   <section id="new">
     <div class="row mt-5 mb-3">

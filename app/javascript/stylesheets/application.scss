@@ -3,7 +3,7 @@
 
 
 
-header {
+header #home {
   background-image: url("/assets/ykyujo.png");
   background-size: cover;
   z-index: 9999;
@@ -22,7 +22,6 @@ header #logo {
 	bottom: 20%;	/*ロゴやメニューが入っているブロックに対して、下からの配置場所の指定。*/
 	left: 0px;
 }
-
 
 footer {
   position: absolute;
@@ -58,14 +57,8 @@ h3 {
 /* タブレット用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 521px) {
 
-
 }
 /* PC用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 960px) {
-  body {
-  width: 100vw;
-  height: 100vh;
-  font-family: "You Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-seril;
-}
 
 }
