@@ -14,15 +14,17 @@
           <li class="nav-item">
             <%= link_to "店舗ページ", admin_store_path(current_admin_store), class: 'nav-link' %>
           </li>
-          <li class="nav-item">
-            <%= link_to "商品登録", new_admin_store_item_path(current_admin_store.id), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "注文履歴", admin_store_orders_path(current_admin_store.id), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "データ確認", admin_store_data_graphs_path(current_admin_store.id), class: 'nav-link' %>
-          </li>
+          <% if current_admin_store.owner_flag == false %>
+            <li class="nav-item">
+              <%= link_to "商品登録", new_admin_store_item_path(current_admin_store.id), class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "注文履歴", admin_store_orders_path(current_admin_store.id), class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "データ確認", admin_store_data_graphs_path(current_admin_store.id), class: 'nav-link' %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
