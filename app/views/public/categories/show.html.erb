@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" style="margin-top: 100px;">
   <div class="row mt-5 mb-3">
-    <h3 class="bg-dark"><strong><%= @category.name %></strong>  一覧</h3>
+    <h3><strong><%= @category.name %></strong>  一覧</h3>
   </div>
   <div class="row">
     <% @items.each do |item| %>
@@ -22,5 +22,8 @@
       </div>
     </div>
     <% end %>
+  </div>
+  <div class="row">
+    <h5 style="margin-bottom: 100px;"></h5>
   </div>
 </div>

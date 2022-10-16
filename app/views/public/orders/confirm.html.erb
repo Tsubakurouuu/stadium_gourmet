@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container" style="margin-top: 100px;">
   <div class="row mt-5">
-    <h3 class="bg-dark">注文情報確認</h3>
+    <h3>注文情報確認</h3>
   </div>
   <% @cart_items.each do |cart_item| %>
     <% @product_total = @product_total + cart_item.subtotal %>
   <% end %>
-  <div class="card text-dark p-2">
+  <div class="card text-dark p-2 mt-3">
     <div class="row">
       <div class="col-6">
         <p>商品合計</p>
@@ -45,7 +45,7 @@
 
   <div class="card mt-3">
     <div class="row mt-3 ml-3">
-      <h4 class="bg-dark">座席情報</h4>
+      <h4 class="subtitle">座席情報</h4>
     </div>
     <div class="row mt-3 mb-3">
       <h5 class="text-dark mx-auto"><%= @order.seat_area %>-<%= @order.seat_alphabet %>-<%= @order.seat_number %></h5>
@@ -53,7 +53,7 @@
   </div>
   <div class="card mt-3">
     <div class="row mt-3 ml-3">
-      <h4 class="bg-dark">支払い方法</h4>
+      <h4 class="subtitle">支払い方法</h4>
     </div>
     <div class="row mt-2 mb-3">
       <p class="text-dark mx-auto">クレジットカード</p>
@@ -61,7 +61,7 @@
   </div>
   <div class="card mt-3 p-2 mx-auto">
     <div class="row ml-3">
-      <h4 class="bg-dark">購入商品</h4>
+      <h4 class="subtitle">購入商品</h4>
     </div>
     <div class="row">
       <% @cart_items.each do |cart_item| %>

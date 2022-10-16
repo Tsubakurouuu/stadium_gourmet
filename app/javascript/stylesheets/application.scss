@@ -1,7 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-
+header .head {
+  width: 100%;
+  position: fixed; /* ウィンドウを基準に画面に固定 */
+  top: 0; /* 上下の固定位置を上から0pxにする */
+  left: 0;
+  z-index: 9999;
+}
 
 header #home {
   background-image: url("/assets/ykyujo.png");
@@ -43,16 +49,36 @@ body {
   text-overflow: ellipsis;
 }
 
-.card:hover {
-  background-color: gold;
-}
-
 h2 {
   margin-top: 50px;
 }
 
 h3 {
-  margin-top: 50px;
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: black;
+  position: relative;
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;
+}
+
+.subtitle:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #5ab9ff; /*アイコン色*/
+  font-weight: 900;
 }
 
 /* タブレット用CSSをメディアクエリ内に記述する */

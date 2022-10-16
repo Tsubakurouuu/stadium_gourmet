@@ -22,7 +22,7 @@
   <% unless customer_signed_in? %>
   <section id="rogin" style="height: 100vh;">
     <div class="row mt-5 mb-3">
-      <h3 class="mx-auto bg-dark">ログイン</h3>
+      <h3>ログイン</h3>
     </div>
     <div class="row" style="margin-top: 50px; height: 50px;">
       <%= link_to 'ゲストログイン', customers_guest_sign_in_path, class: "btn btn-secondary mx-auto w-50 sign_in", style: "line-height: 50px;", method: :post %>
@@ -37,7 +37,7 @@
   <% end %>
   <section id="new">
     <div class="row mt-5 mb-3">
-      <h3 class="mx-auto bg-dark">新着グルメ</h3>
+      <h3 class="mx-auto">新着グルメ</h3>
     </div>
     <% @items_new.each do |item| %>
       <div class="card p-2 mt-3">
@@ -59,7 +59,7 @@
   </section>
   <section id="ranking">
     <div class="row mt-5 mb-3">
-      <h3 class="mx-auto bg-dark">人気グルメランキング</h3>
+      <h3>人気グルメランキング</h3>
     </div>
     <% @items_rank.each do |item| %>
       <div class="card p-2 mt-3">
