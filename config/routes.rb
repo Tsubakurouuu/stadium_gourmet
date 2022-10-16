@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
 
-    devise_for :customers, controllers: {
+    devise_for :customers, skip: [:passwords], controllers: {
       registrations: "public/registrations",
       sessions: 'public/sessions'
     }

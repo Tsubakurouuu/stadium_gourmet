@@ -18,17 +18,5 @@
   <div class="row mt-5" style="justify-content: center;">
     <%= f.submit "ログイン", class: "btn btn-primary" %>
   </div>
-</div>
-
-
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
   <% end %>
-
-<% end %>
-
-<%= render "public/shared/links" %>
+</div>
