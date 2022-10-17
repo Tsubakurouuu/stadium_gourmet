@@ -75,3 +75,5 @@ gem 'rails-i18n'
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
+
+gem 'whenever'
