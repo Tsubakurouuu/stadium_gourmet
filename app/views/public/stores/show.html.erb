@@ -34,7 +34,11 @@
             <%= link_to store_item_path(@store.id, item.id), class: "text-dark" do %>
               <div class="card-img-top"><%= image_tag item.image, style: "width: 100%; aspect-ratio: 3 / 2; object-fit: cover;" %></div>
               <h5 class="card-title long-name"><%= item.name %></h5>
-              ￥ <%= item.with_tax_price.to_s(:delimited) %>
+              <% if item.is_active == true %>
+                <div>¥ <%= item.with_tax_price.to_s(:delimited) %></div>
+              <% else %>
+                <div class="text-danger" >売り切れ</div>
+              <% end %>
             <% end %>
           </div>
         </div>

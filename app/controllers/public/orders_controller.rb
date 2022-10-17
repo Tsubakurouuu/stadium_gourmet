@@ -24,6 +24,9 @@ class Public::OrdersController < ApplicationController
       #商品在庫・売上数の更新
       item = Item.find_by(id: cart_item.item_id)
       item.stock -= cart_item.amount
+      if item.stock == 0
+        item.is_active = false
+      end
       item.earning += cart_item.amount
       item.save
     end
