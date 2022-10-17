@@ -16,7 +16,7 @@
         <a style="color: #a6ce39;" href="#ranking"><i class="fas fa-crown"></i> Gourmet Ranking</a>
       </li>
       <li class="mt-5">
-        <a style="color: #a6ce39;" href="#usage"><i class="fas fa-lightbulb"></i> 使いかたはこちら</a>
+        <a style="color: #a6ce39;" href="#usage"><i class="fas fa-lightbulb"></i> こちらのサイトについて</a>
       </li>
     </ul>
   </nav>
@@ -24,7 +24,7 @@
 <div class="container">
   <% unless customer_signed_in? %>
   <section id="rogin" style="height: 100vh;">
-    <div class="row mt-5 mb-3">
+    <div class="row mb-3"style="margin-top: 200px;">
       <h3>ログイン</h3>
     </div>
     <div class="row" style="margin-top: 50px; height: 50px;">
@@ -61,7 +61,7 @@
     <% end %>
   </section>
   <section id="ranking">
-    <div class="row mt-5 mb-3">
+    <div class="row mb-3" style="margin-top: 200px;">
       <h3>人気グルメランキング</h3>
     </div>
     <% @items_rank.each do |item| %>
@@ -83,12 +83,35 @@
     <% end %>
   </section>
   <section id="usage">
-    <div class="row mt-5 mb-3">
-      <h3 class="mx-auto">使いかた</h3>
+    <div class="row mb-3" style="margin-top: 200px;">
+      <h3 class="mx-auto">こちらのサイトについて</h3>
     </div>
     <div class="row">
-      <div class="card">
-        <h5>こちらのサイトは球場内で使用できるECサイトです。</h5>
+      <div class="card mx-auto" style="width: 90%;">
+        <h5>
+          こちらのサイトは球場内で使用できるECサイトです。<br>
+          会員登録をすることで商品を閲覧、購入することができます。<br>
+          支払い方法はクレジットカード限定となります。<br>
+          ゲストログインの場合は商品を閲覧することしかできません。<br>
+        </h5>
+      </div>
+      <div class="card mx-auto mt-3" style="width: 90%;">
+        <h5>
+          購入したい商品をカートに入れて注文することで商品を購入することができます。<br>
+          注文の際にご自身の座席情報を入力してください。
+        </h5>
+      </div>
+      <div class="card mx-auto mt-3" style="width: 90%;">
+        <h5>
+          注文が完了しましたらご自身の席にて商品の到着をお待ちください。<br>
+          係のものが商品をお届けに参ります。
+        </h5>
+      </div>
+      <div class="card mx-auto mt-3" style="width: 90%;">
+        <h5>
+          商品の受け渡しが完了しましたら取引の完了です。<br>
+          ご自身の席でお好きな商品を購入してください!!
+        </h5>
       </div>
     </div>
   </section>

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   #顧客
   scope module: :public do
     root to: 'homes#top'
-
+    get 'homes/faq' => 'homes#faq'
     devise_for :customers, skip: [:passwords], controllers: {
       registrations: "public/registrations",
       sessions: 'public/sessions'
