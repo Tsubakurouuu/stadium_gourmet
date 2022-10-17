@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   #管理者
   namespace :admin do
-    root to: 'homes#top'
-
     devise_for :stores, skip: [:registrations, :passwords], controllers: {
       sessions: 'admin/sessions'
     }

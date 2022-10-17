@@ -27,11 +27,7 @@ class Admin::SessionsController < Devise::SessionsController
 
   #ログイン成功後の遷移先
   def after_sign_in_path_for(resource)
-    if current_admin_store.owner_flag == true
-      admin_root_path
-    else
-      admin_store_path(resource)
-    end
+    admin_store_path(resource)
   end
 
   #ログアウト後の遷移先

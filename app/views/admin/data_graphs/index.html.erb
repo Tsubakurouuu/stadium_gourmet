@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row mt-5">
-    <h2>データ</h2>
+  <div class="row">
+    <h2 class="bg-light">データ</h2>
     <%= column_chart @items.pluck(:name, :earning), xtitle: "商品名", ytitle: "売上数" %>
   </div>
 </div>

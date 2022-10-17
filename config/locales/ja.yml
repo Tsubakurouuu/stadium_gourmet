@@ -15,3 +15,15 @@ ja:
     registrations:
       customer:
         signed_up: "アカウント登録が完了しました。"
+    failure:
+      customer:
+        unauthenticated: "アカウント登録もしくはログインしてください。"
+        invalid: "メールアドレスもしくはパスワードが不正です。"
+        not_found_in_database: "メールアドレスもしくはパスワードが不正です。"
+  activerecord:
+    attributes:
+      customer:
+        nickname: "ニックネーム"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード再入力"
