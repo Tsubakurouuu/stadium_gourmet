@@ -32,6 +32,11 @@ class Public::CartItemsController < ApplicationController
 
     # カートアイテムが0の場合、無条件に保存
     if @cart_items.count == 0
+      if @item.stock < @cart_item.amount
+        flash[:alert] = "在庫数を超えての注文はできません。"
+        render template: "public/items/show"
+        return
+      end
       @cart_item.save
       flash[:notice] = "カートに商品を保存しました"
       redirect_to cart_items_path
@@ -60,6 +65,12 @@ class Public::CartItemsController < ApplicationController
 
   def update
     @cart_item = CartItem.find(params[:id])
+    item = Item.find_by(id: @cart_item.item_id)
+    if item.stock < params[:amount].to_i
+      flash[:alert] = "在庫数を超えての注文はできません。"
+      redirect_to request.referer
+      return
+    end
     @cart_item.update(amount: params[:amount])
     flash[:notice] = "商品の数量を変更しました。"
     redirect_to request.referer

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#店舗データ
+# 店舗データ
 #1
 Store.create!(
   name: '管理人',
@@ -95,7 +95,7 @@ store = Store.create!(
 )
 store.image.attach(io: File.open(Rails.root.join('app/assets/images/osakana.png')), filename: 'osakana.png')
 
-#商品データ
+# 商品データ
 #1
 item = Item.create!(
   store_id: "3",
@@ -103,6 +103,7 @@ item = Item.create!(
   name: "家系ラーメン",
   explanation: "1974年以降に登場した神奈川県横浜市発祥の豚骨醤油ベースで太いストレート麺を特徴とするラーメンおよびそのラーメン店群です。 元々屋号に「○○家」とついているところが多かったところから、家系と呼ばれるようになりました。",
   without_tax: "950",
+  stock: "3"
 )
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/ieramen.jpg')), filename: 'ieramen.jpg')
 
@@ -427,7 +428,8 @@ item = Item.create!(
 item.image.attach(io: File.open(Rails.root.join('app/assets/images/samonebi.jpg')), filename: 'samonebi.jpg')
 
 
-#カテゴリー初期データ
+
+# カテゴリー初期データ
 Category.create!(name: "弁当")
 Category.create!(name: "丼")
 Category.create!(name: "麺類")
