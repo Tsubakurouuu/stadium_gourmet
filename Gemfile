@@ -67,3 +67,5 @@ gem 'chartkick'
 gem 'groupdate'
 
 gem 'payjp'
+
+gem 'jquery-rails'

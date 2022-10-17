@@ -30,6 +30,7 @@ class Public::OrdersController < ApplicationController
 
     #保存後カートを空にする
     cart_items.destroy_all
+    flash[:notice] = "注文が完了しました。"
     redirect_to orders_complete_path
   end
 
@@ -72,7 +73,7 @@ class Public::OrdersController < ApplicationController
 
   def ensure_guest_user
     if current_customer.nickname == "guestuser"
-      flash[:alert] = "ゲストは注文履歴を見ることができません。"
+      flash[:alert] = "ゲストは商品を閲覧することしかできません。"
       redirect_to searches_path
     end
   end

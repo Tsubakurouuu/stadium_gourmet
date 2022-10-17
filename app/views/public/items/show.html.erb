@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 100px;">
+<div class="container">
   <div class="card p-2 mt-5 text-dark">
     <div class="row">
       <div class="col-12">
@@ -20,9 +20,6 @@
         <%= f.hidden_field :customer_id, value: current_customer.id %>
         <%= f.select :amount, *[1..5], { include_blank: "個数" }, class: "form-control" %>
       </div>
-    </div>
-    <div class="row">
-      <div class="mx-auto text-danger"><%= alert %></div>
     </div>
     <div class="row mt-3" style="justify-content: center;">
       <%= f.submit "カートにいれる", class: "btn btn-primary" %>

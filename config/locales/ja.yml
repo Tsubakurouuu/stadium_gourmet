@@ -7,3 +7,11 @@ ja:
         shipping: "発送中"
         sent: "発送済み"
         no_customer: "お客様不在"
+  devise:
+    sessions:
+      customer:
+        signed_in: "ログインに成功しました。"
+        signed_out: "ログアウトに成功しました。"
+    registrations:
+      customer:
+        signed_up: "アカウント登録が完了しました。"

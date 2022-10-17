@@ -29,7 +29,7 @@ class Public::SessionsController < Devise::SessionsController
   def guest_sign_in
     customer = Customer.guest
     sign_in customer
-    flash[:notice] = "guestuserでログインしました"
+    flash[:notice] = "ゲストでログインしました"
     redirect_to searches_path
   end
 
