@@ -143,6 +143,14 @@ GEM
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.6.0)
+    net-imap (0.3.1)
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
+    net-protocol (0.1.3)
+      timeout
+    net-smtp (0.3.2)
+      net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.8-x86_64-linux)
@@ -239,6 +247,7 @@ GEM
     sqlite3 (1.5.2-x86_64-linux)
     thor (1.2.1)
     tilt (2.0.11)
+    timeout (0.3.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -287,6 +296,9 @@ DEPENDENCIES
   jquery-rails
   kaminari (~> 1.2.1)
   listen (~> 3.3)
+  net-imap
+  net-pop
+  net-smtp
   payjp
   pry-rails
   puma (~> 5.0)

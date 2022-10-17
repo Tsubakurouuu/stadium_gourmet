@@ -13,6 +13,9 @@ module StadiumGourmet
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
 
+    config.autoload_paths += %W(#{config.root}/lib)
+    # 特にここ！！Rails5から productionでも呼び出せるように設定しないといけない
+    config.enable_dependency_loading = true
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
