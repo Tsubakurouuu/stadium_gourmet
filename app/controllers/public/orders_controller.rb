@@ -1,5 +1,6 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!, only: [:show]
+  before_action :ensure_guest_user
   def new
     @order = Order.new
   end
@@ -39,6 +40,7 @@ class Public::OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @order_details = @order.order_details
+    @order_detail = @order_details.order(created_at: :desc).limit(1)
     @product_total = 0
     unless @order.customer_id == current_customer.id
       redirect_to searches_path
@@ -66,5 +68,12 @@ class Public::OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:customer_id, :seat_area, :seat_alphabet, :seat_number, :total_price)
+  end
+
+  def ensure_guest_user
+    if current_customer.nickname == "guestuser"
+      flash[:alert] = "ゲストは注文履歴を見ることができません。"
+      redirect_to searches_path
+    end
   end
 end

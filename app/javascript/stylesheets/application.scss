@@ -3,17 +3,14 @@
 
 header .head {
   width: 100%;
-  position: fixed; /* ウィンドウを基準に画面に固定 */
-  top: 0; /* 上下の固定位置を上から0pxにする */
-  left: 0;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 header #home {
   background-image: url("/assets/ykyujo.png");
   background-size: cover;
   background-position: center;
-  z-index: 9999;
+  z-index: 9998;
   height: 100vh;
   position: relative;
 }
@@ -79,6 +76,22 @@ h3 {
   color: #5ab9ff; /*アイコン色*/
   font-weight: 900;
 }
+
+.flash-notifications {
+  z-index: 9999;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+
+  .notice {
+    background-color: #ADD8E6;
+  }
+
+  .alert {
+    background-color: #FF4500;
+  }
+
+  }
 
 /* タブレット用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 521px) {

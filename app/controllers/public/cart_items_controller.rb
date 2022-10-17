@@ -1,5 +1,6 @@
 class Public::CartItemsController < ApplicationController
   before_action :authenticate_customer!
+  before_action :ensure_guest_user, only: [:index]
   def create
     @cart_item = CartItem.new(cart_item_params)
     @item = Item.find(cart_item_params[:item_id])
@@ -67,5 +68,12 @@ class Public::CartItemsController < ApplicationController
 
   def cart_item_params
     params.require(:cart_item).permit(:customer_id, :item_id, :amount)
+  end
+
+  def ensure_guest_user
+    if current_customer.nickname == "guestuser"
+      flash[:alert] = "ゲストはカートを見ることができません。"
+      redirect_to searches_path
+    end
   end
 end
