@@ -16,6 +16,11 @@ class Public::CartItemsController < ApplicationController
     @cart_items.each do |cart_item|
       if cart_item.item_id == @cart_item.item_id
         new_amount = cart_item.amount.to_i + @cart_item.amount.to_i
+        if new_amount > 5
+          flash[:alert] = "1つの商品の購入上限は5つです。"
+          render template: "public/items/show"
+          return
+        end
         cart_item.update(amount: new_amount)
         @cart_item.delete
       end
