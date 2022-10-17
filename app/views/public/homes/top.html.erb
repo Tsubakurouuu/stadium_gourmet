@@ -6,14 +6,17 @@
     <ul style="list-style: none; padding-left: 0;">
       <% unless customer_signed_in? %>
         <li>
-          <a style="color: #a6ce39;" href="#rogin">Log In</a>
+          <a style="color: #a6ce39;" href="#rogin"><i class="fas fa-sign-in-alt"></i> Log In</a>
         </li>
       <% end %>
       <li>
-        <a style="color: #a6ce39;" href="#new">New Gourmet</a>
+        <a style="color: #a6ce39;" href="#new"><i class="fas fa-star"></i> New Gourmet</a>
       </li>
       <li>
-        <a style="color: #a6ce39;" href="#ranking">Gourmet Ranking</a>
+        <a style="color: #a6ce39;" href="#ranking"><i class="fas fa-crown"></i> Gourmet Ranking</a>
+      </li>
+      <li class="mt-5">
+        <a style="color: #a6ce39;" href="#usage"><i class="fas fa-lightbulb"></i> 使いかたはこちら</a>
       </li>
     </ul>
   </nav>
@@ -78,6 +81,16 @@
         </div>
       </div>
     <% end %>
+  </section>
+  <section id="usage">
+    <div class="row mt-5 mb-3">
+      <h3 class="mx-auto">使いかた</h3>
+    </div>
+    <div class="row">
+      <div class="card">
+        <h5>こちらのサイトは球場内で使用できるECサイトです</h5>
+      </div>
+    </div>
   </section>
   <div class="row">
     <h5 style="margin-bottom: 100px;"></h5>
