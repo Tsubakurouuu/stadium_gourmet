@@ -68,6 +68,7 @@ class Public::CartItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     CartItem.find_by(item_id: item.id).destroy
+    flash[:notice] = "商品をカートから削除しました。"
     redirect_to request.referer
   end
 
