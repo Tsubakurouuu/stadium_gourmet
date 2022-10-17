@@ -1,6 +1,6 @@
 class Public::CartItemsController < ApplicationController
   before_action :authenticate_customer!
-  before_action :ensure_guest_user, only: [:index]
+  before_action :ensure_guest_user
   def create
     @cart_item = CartItem.new(cart_item_params)
     @item = Item.find(cart_item_params[:item_id])

@@ -1,5 +1,5 @@
 class Public::OrdersController < ApplicationController
-  before_action :authenticate_customer!, only: [:show]
+  before_action :authenticate_customer!
   before_action :ensure_guest_user
   def new
     @order = Order.new

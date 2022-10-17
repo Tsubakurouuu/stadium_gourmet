@@ -34,13 +34,11 @@ Rails.application.routes.draw do
     post 'orders/confirm' => 'orders#confirm'
     get 'orders/complete' => 'orders#complete'
 
-    resources :categories, only: [:index, :show]
-    resources :sale_areas, only: [:index, :show]
+    resources :categories, only: [:show]
+    resources :sale_areas, only: [:show]
     resources :cart_items, only: [:create, :index, :update, :destroy]
     resources :orders, only: [:new, :create, :index, :show]
     resources :searches, only: [:index]
-    resources :rankings, only: [:index, :show]
-    resources :new_gourmets, only: [:index]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

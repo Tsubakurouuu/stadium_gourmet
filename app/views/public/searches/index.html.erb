@@ -1,11 +1,19 @@
 <div class="container">
-  <div class="row" style="height: 100px; margin-top: 100px;">
-    <%= link_to "店舗から探す", stores_path, class: "btn btn-primary mx-auto w-75", style: "line-height: 100px;" %>
+  <div class="row mt-5">
+    <h3 class="bg-light">グルメを探す</h3>
   </div>
-  <div class="row mt-5" style="height: 100px;">
-    <%= link_to "カテゴリーから探す", categories_path, class: "btn btn-warning mx-auto w-75", style: "line-height: 100px;" %>
+  <div class="row">
+    <% @sale_areas.each do |sale_area| %>
+    <div class="col-6 mt-5" style="height: 75px; text-align: center;">
+      <%= link_to sale_area.name, sale_area_path(sale_area.id), class: "btn btn-primary w-100", style: "line-height: 75px;" %>
+    </div>
+    <% end %>
   </div>
-  <div class="row mt-5" style="height: 100px;">
-    <%= link_to "エリアから探す", sale_areas_path, class: "btn btn-danger mx-auto w-75", style: "line-height: 100px;" %>
+  <div class="row" style="margin-top: 70px;">
+    <% @categories.each do |category| %>
+    <div class="col-6 mt-5" style="height: 75px; text-align: center;">
+      <%= link_to category.name, category_path(category.id), class: "btn btn-primary w-100", style: "line-height: 75px;" %>
+    </div>
+    <% end %>
   </div>
 </div>

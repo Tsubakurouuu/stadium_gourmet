@@ -1,4 +1,5 @@
 class Public::StoresController < ApplicationController
+  before_action :authenticate_customer!
   def index
     @stores = Store.where(owner_flag: false)
   end

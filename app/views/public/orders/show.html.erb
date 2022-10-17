@@ -1,4 +1,18 @@
 <div class="contaner">
+<% if @order.order_status_i18n == "お客様不在" %>
+  <div class="row">
+    <div class="card mx-auto mt-5 p-3" style="width: 90%;">
+      <h1><i class="fas fa-exclamation-triangle text-danger"></i></h1>
+      <div class="row">
+        <h4 class="text-danger ml-3">商品のお届けに参りましたが不在のため持ち帰りました。</h4>
+      </div>
+      <div class="row mx-auto" style="width: 90%;">
+        <h5 class="row mt-3 text-dark">お手数ですが、店舗まで商品を受け取りに来てください。</h5>
+      </div>
+    </div>
+  </div>
+  </div>
+<% end %>
   <div class="row mt-5">
     <h3>注文情報</h3>
   </div>
