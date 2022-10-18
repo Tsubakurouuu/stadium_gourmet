@@ -2,8 +2,15 @@ class Admin::ItemsController < ApplicationController
   before_action :authenticate_admin_store!, only: [:new, :show, :edit]
   def new
     @item = Item.new
+    if current_admin_store.owner_flag == true
+      flash[:alert] = "管理者は商品の新規登録ができません。"
+      redirect_to admin_stores_path
+      return
+    end
     unless params[:store_id].to_i == current_admin_store.id
+      flash[:alert] = "管理。"
       redirect_to admin_store_path(current_admin_store.id)
+      return
     end
   end
 
@@ -30,8 +37,14 @@ class Admin::ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @store = Store.find_by(id: @item.store_id)
+    if current_admin_store.owner_flag == true
+      flash[:alert] = "管理者は商品の編集ができません。"
+      redirect_to admin_stores_path
+      return
+    end
     unless @store.id == current_admin_store.id
       redirect_to admin_store_path(current_admin_store.id)
+      return
     end
   end
 

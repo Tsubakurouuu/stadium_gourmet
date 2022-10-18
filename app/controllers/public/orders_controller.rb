@@ -59,7 +59,7 @@ class Public::OrdersController < ApplicationController
     @cart_items = current_customer.cart_items
     @product_total = 0
     if params[:order][:seat_area].blank? || params[:order][:seat_alphabet].blank? ||  params[:order][:seat_number].blank?
-        flash.now[:alert] = "座席情報をすべて入力してください。"
+      flash[:alert] = "座席情報をすべて入力してください。"
       render :new
     end
   end
