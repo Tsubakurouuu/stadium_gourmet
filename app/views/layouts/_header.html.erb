@@ -19,14 +19,14 @@
           <%= link_to "データ確認", admin_store_data_graphs_path(current_admin_store.id), class: 'nav-link' %>
         </li>
       <% end %>
-      <li class="nav-item">
-        <%= link_to "ログアウト", destroy_admin_store_session_path, method: :delete, class: 'nav-link' %>
-      </li>
       <% if current_admin_store.owner_flag. == true %>
         <li class="nav-item">
           <%= link_to "店舗一覧", admin_stores_path, class: 'nav-link' %>
         </li>
       <% end %>
+        <li class="nav-item">
+          <%= link_to "ログアウト", destroy_admin_store_session_path, method: :delete, class: 'nav-link' %>
+        </li>
       </ul>
     </div>
   </nav>
