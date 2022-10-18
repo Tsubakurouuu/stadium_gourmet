@@ -8,7 +8,6 @@ header .head {
   width: 100%;
   height: 50px;
   z-index: 9998;
-  opacity: 0.9;
 }
 
 header #home {
@@ -61,6 +60,7 @@ h3 {
   border-left: solid 5px #7db4e6;/*左線*/
   border-bottom: solid 3px #d7d7d7;/*下線*/
   margin: 0 auto;
+  margin-top: 30px;
 }
 
 .subtitle {
@@ -180,7 +180,6 @@ h3 {
   width: 100%;
   bottom: 0px;
   font-size: 0;
-  opacity: 0.9;
   z-index: 99;
 }
 
@@ -191,6 +190,7 @@ h3 {
   padding: 0;
   margin: 0;
   width: 100%;
+  height: 100px;
 }
 
 #sp-fixed-menu li{
@@ -208,7 +208,6 @@ h3 {
   text-align: center;
   display: block;
   width: 100%;
-  padding: 20px;
 }
 
 /* タブレット用CSSをメディアクエリ内に記述する */

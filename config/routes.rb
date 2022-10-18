@@ -26,7 +26,7 @@ Rails.application.routes.draw do
       post 'customers/guest_sign_in', to: 'sessions#guest_sign_in'
     end
 
-    resources :stores, only: [:index, :show] do
+    resources :stores, only: [:show] do
       resources :items, only: [:show]
     end
 

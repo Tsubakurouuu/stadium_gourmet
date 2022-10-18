@@ -1,9 +1,0 @@
-<div class="container">
-  <div class="row" style="margin-top: 50px;">
-    <% @sale_areas.each do |sale_area| %>
-    <div class="col-6 mt-5" style="height: 100px; text-align: center;">
-      <%= link_to sale_area.name, sale_area_path(sale_area.id), class: "btn btn-primary w-75", style: "line-height: 100px;" %>
-    </div>
-    <% end %>
-  </div>
-</div>
