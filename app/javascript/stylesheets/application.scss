@@ -2,8 +2,13 @@
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
 header .head {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 50px;
   z-index: 9998;
+  opacity: 0.9;
 }
 
 header #home {
@@ -151,6 +156,10 @@ h3 {
 }
 
 .flash-notifications {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 9999;
   font-weight: bold;
   color: white;
@@ -163,8 +172,44 @@ h3 {
   .alert {
     background-color: #FF4500;
   }
+}
 
-  }
+/*メニューをページ下部に固定*/
+#sp-fixed-menu{
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  font-size: 0;
+  opacity: 0.9;
+  z-index: 99;
+}
+
+/*メニューを横並びにする*/
+#sp-fixed-menu ul{
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#sp-fixed-menu li{
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  border-right: 1px solid #fff;
+}
+
+#sp-fixed-menu li a{
+  color: #fff;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 20px;
+}
 
 /* タブレット用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 521px) {
@@ -172,5 +217,8 @@ h3 {
 }
 /* PC用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 960px) {
-
+  .for-sp{
+    height: 50px;
+    background-color: #a6ce39;
+  }
 }

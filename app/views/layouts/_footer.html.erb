@@ -1,7 +1,27 @@
 <footer class="fixed-bottom">
-  <% if admin_store_signed_in? %>
-    <div style="height: 50px; background-color: #c22a1f"></div>
-  <% elsif customer_signed_in? %>
-    <div style="height: 50px; background-color: #a6ce39"></div>
-  <% end %>
+<% if admin_store_signed_in? %>
+  <div style="height: 50px; background-color: #c22a1f;"></div>
+<% elsif customer_signed_in? %>
+  <div id="sp-fixed-menu" class="for-sp" style="background-color: #a6ce39;">
+    <ul>
+      <li class="nav-item">
+        <%= link_to "グルメを探す", searches_path, class: 'nav-link' %>
+      </li>
+      <% unless current_customer.nickname == "guestuser" %>
+        <li class="nav-item">
+          <%= link_to "カート", cart_items_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "注文履歴", orders_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+      <li class="nav-item">
+          <%= link_to "FAQ", homes_faq_path, class: 'nav-link' %>
+        </li>
+      <li class="nav-item">
+        <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+<% end %>
 </footer>
