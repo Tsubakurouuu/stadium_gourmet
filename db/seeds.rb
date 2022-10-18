@@ -437,7 +437,7 @@ Category.create!(name: "ファストフード")
 Category.create!(name: "スイーツ")
 Category.create!(name: "ドリンク")
 
-#販売エリア初期データ
+# 販売エリア初期データ
 SaleArea.create!(name: "内野エリア")
 SaleArea.create!(name: "外野エリア")
 

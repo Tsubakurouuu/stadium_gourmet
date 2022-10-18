@@ -2,34 +2,31 @@
 <!--店舗ログイン時-->
 <% if admin_store_signed_in? %>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c22a1f">
-    <a class="navbar-brand" href="/admin">管理者</a>
+    <a class="navbar-brand" href='<%= "/admin/stores/#{current_admin_store.id}" %>'>管理者</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
+      <% if current_admin_store.owner_flag == false %>
         <li class="nav-item">
-          <%= link_to "ログアウト", destroy_admin_store_session_path, method: :delete, class: 'nav-link' %>
+          <%= link_to "商品登録", new_admin_store_item_path(current_admin_store.id), class: 'nav-link' %>
         </li>
-        <% if current_admin_store.owner_flag == false %>
-          <li class="nav-item">
-            <%= link_to "店舗ページ", admin_store_path(current_admin_store), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "商品登録", new_admin_store_item_path(current_admin_store.id), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "注文履歴", admin_store_orders_path(current_admin_store.id), class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "データ確認", admin_store_data_graphs_path(current_admin_store.id), class: 'nav-link' %>
-          </li>
-        <% end %>
-        <% if current_admin_store.owner_flag. == true %>
-          <li class="nav-item">
-            <%= link_to "店舗一覧", admin_stores_path, class: 'nav-link' %>
-          </li>
-        <% end %>
+        <li class="nav-item">
+          <%= link_to "注文履歴", admin_store_orders_path(current_admin_store.id), class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "データ確認", admin_store_data_graphs_path(current_admin_store.id), class: 'nav-link' %>
+        </li>
+      <% end %>
+      <li class="nav-item">
+        <%= link_to "ログアウト", destroy_admin_store_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+      <% if current_admin_store.owner_flag. == true %>
+        <li class="nav-item">
+          <%= link_to "店舗一覧", admin_stores_path, class: 'nav-link' %>
+        </li>
+      <% end %>
       </ul>
     </div>
   </nav>
