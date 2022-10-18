@@ -16,7 +16,10 @@
     </div>
   </div>
   <div class="row mt-5" style="justify-content: center;">
-    <%= f.submit "ログイン", class: "btn btn-primary" %>
+    <%= f.submit "ログイン", class: "btn btnlog" %>
   </div>
   <% end %>
+  <div class="row">
+    <p class="mt-5 mx-auto">新規登録は<%= link_to "こちら", new_customer_registration_path %></p>
+  </div>
 </div>

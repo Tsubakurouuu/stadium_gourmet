@@ -3,6 +3,7 @@ module Item::Stock extend self
     @items = Item.all
     @items.each do |item|
       item.stock = 500
+      item.is_active = true
       item.save
     end
   end

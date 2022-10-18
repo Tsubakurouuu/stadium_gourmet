@@ -27,7 +27,9 @@
       </div>
     </div>
     <div class="row mt-3" style="justify-content: center;">
-      <%= f.submit "カートにいれる", class: "btn btn-primary" %>
+      <%= button_tag :type => "submit", class: "btn btncar", style: "background-color: orange; line-height: 40px; width: 50%;" do %>
+        <i class="fas fa-shopping-cart"></i> カートにいれる
+      <% end %>
     </div>
     <% end %>
   <% end %>

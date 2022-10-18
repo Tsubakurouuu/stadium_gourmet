@@ -2,17 +2,18 @@
   <div class="row mt-5">
     <h3 class="bg-light">グルメを探す</h3>
   </div>
+
   <div class="row">
     <% @sale_areas.each do |sale_area| %>
     <div class="col-6 mt-5" style="height: 75px; text-align: center;">
-      <%= link_to sale_area.name, sale_area_path(sale_area.id), class: "btn btn-primary w-100", style: "line-height: 75px;" %>
+      <%= link_to sale_area.name, sale_area_path(sale_area.id), class: "btn btnare w-100", style: "line-height: 75px;" %>
     </div>
     <% end %>
   </div>
   <div class="row" style="margin-top: 70px;">
     <% @categories.each do |category| %>
     <div class="col-6 mt-5" style="height: 75px; text-align: center;">
-      <%= link_to category.name, category_path(category.id), class: "btn btn-primary w-100", style: "line-height: 75px;" %>
+      <%= link_to category.name, category_path(category.id), class: "btn btncat w-100", style: "line-height: 75px;" %>
     </div>
     <% end %>
   </div>
