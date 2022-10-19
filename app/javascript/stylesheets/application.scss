@@ -38,6 +38,14 @@ header #logo {
   font-family: 'Londrina Shadow', cursive;
 }
 
+.header-logo {
+  font-size: 50px;
+  text-align: center;
+  width: 100%;
+  line-height: 50px;
+  font-family: 'Londrina Shadow', cursive;
+}
+
 footer {
   position: absolute;
   bottom: 0;
@@ -223,5 +231,5 @@ h3 {
 }
 /* PC用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 960px) {
-  
+
 }
