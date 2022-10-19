@@ -7,6 +7,7 @@ class Admin::OrdersController < ApplicationController
       @orders = @store.items.flat_map(&:orders)
     else
       unless params[:store_id].to_i == current_admin_store.id
+        flash[:alert] = "他の店舗の注文履歴は閲覧できません。"
         redirect_to admin_store_path(current_admin_store.id)
         return
       end
@@ -16,22 +17,37 @@ class Admin::OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
-    @order_details = @order.order_details
-    @product_total = 0
     if current_admin_store.owner_flag == true
+      unless Order.exists?(params[:id])
+        flash[:alert] = "注文詳細が存在しません。"
+        redirect_to admin_stores_path
+        return
+      end
+      @order = Order.find(params[:id])
+      @order_details = @order.order_details
+      @product_total = 0
       return
     end
     unless params[:store_id].to_i == current_admin_store.id
+      flash[:alert] = "他の店舗の注文履歴は閲覧できません。"
       redirect_to admin_store_path(current_admin_store.id)
       return
     end
+    unless Order.exists?(params[:id])
+      flash[:alert] = "注文詳細が存在しません。"
+      redirect_to admin_store_path(current_admin_store.id)
+      return
+    end
+    @order = Order.find(params[:id])
+    @order_details = @order.order_details
+    @product_total = 0
   end
 
   def update
     @order = Order.find(params[:id])
     # 注文ステータス更新時の処理
     @order.update(order_params)
+    flash[:notice] = "注文ステータスの更新が完了しました。"
     redirect_to request.referer
   end
 

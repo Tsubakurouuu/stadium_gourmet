@@ -9,6 +9,9 @@ ja:
         no_customer: "お客様不在"
   devise:
     sessions:
+      admin_store:
+        signed_in: "ログインに成功しました。"
+        signed_out: "ログアウトに成功しました。"
       customer:
         signed_in: "ログインに成功しました。"
         signed_out: "ログアウトに成功しました。"
@@ -16,19 +19,11 @@ ja:
       customer:
         signed_up: "アカウント登録が完了しました。"
     failure:
-      customer:
+      admin_store:
         unauthenticated: "アカウント登録もしくはログインしてください。"
         invalid: "メールアドレスもしくはパスワードが不正です。"
         not_found_in_database: "メールアドレスもしくはパスワードが不正です。"
-    sessions:
-      admin_store:
-        signed_in: "ログインに成功しました。"
-        signed_out: "ログアウトに成功しました。"
-    registrations:
       customer:
-        signed_up: "アカウント登録が完了しました。"
-    failure:
-      admin_store:
         unauthenticated: "アカウント登録もしくはログインしてください。"
         invalid: "メールアドレスもしくはパスワードが不正です。"
         not_found_in_database: "メールアドレスもしくはパスワードが不正です。"
@@ -39,3 +34,9 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード再入力"
+      item:
+        image: "商品画像"
+        name: "商品名"
+        explanation: "商品説明"
+        category_id: "カテゴリー"
+        without_tax: "税抜価格"

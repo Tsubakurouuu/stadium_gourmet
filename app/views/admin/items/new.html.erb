@@ -2,6 +2,7 @@
   <div class="row">
     <h2 class="bg-light">商品新規登録</h2>
   </div>
+  <%= render "layouts/errors", obj: @item %>
   <div class="card p-3">
     <div class="row">
       <div class="col-md-10 offset-md-2">
@@ -24,7 +25,7 @@
               <td><%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "--選択してください--"} %></td>
             </tr>
             <tr>
-              <th>値段</th>
+              <th>税抜価格</th>
               <td><%= f.text_field :without_tax %>円</td>
             </tr>
             <tr>
