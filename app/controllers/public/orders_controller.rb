@@ -2,6 +2,11 @@ class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
   before_action :ensure_guest_user
   def new
+    unless current_customer.cart_items.exists?
+      flash[:alert] = "カートに商品がありません。"
+      redirect_to orders_path
+      return
+    end
     @order = Order.new
   end
 
@@ -42,12 +47,18 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
+    unless Order.exists?(params[:id])
+      flash[:alert] = "注文詳細が存在しません。"
+      redirect_to orders_path
+      return
+    end
     @order = Order.find(params[:id])
     @order_details = @order.order_details
     @order_detail = @order_details.order(created_at: :desc).limit(1)
     @product_total = 0
     unless @order.customer_id == current_customer.id
-      redirect_to searches_path
+      flash[:alert] = "他のお客様の注文情報を閲覧することはできません。"
+      redirect_to orders_path
     end
   end
 
