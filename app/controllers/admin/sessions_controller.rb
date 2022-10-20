@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Admin::SessionsController < Devise::SessionsController
+  before_action :ensure_customer
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -33,5 +34,14 @@ class Admin::SessionsController < Devise::SessionsController
   #ログアウト後の遷移先
   def after_sign_out_path_for(resource)
     new_admin_store_session_path
+  end
+
+  private
+
+  def ensure_customer
+    if customer_signed_in?
+      flash[:alert] = "すでにログインしています。"
+      redirect_to searches_path
+    end
   end
 end
