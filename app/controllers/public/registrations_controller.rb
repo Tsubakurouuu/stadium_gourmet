@@ -2,7 +2,7 @@
 
 class Public::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :ensure_admin_store
   # 新規登録後の遷移先
   def after_sign_in_path_for(resource)
     searches_path
@@ -12,6 +12,15 @@ class Public::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
+  end
+
+  private
+
+  def ensure_admin_store
+    if admin_store_signed_in?
+      flash[:alert] = "管理者でログイン中は顧客ページにアクセスできません。"
+      redirect_to admin_store_path(current_admin_store.id)
+    end
   end
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]

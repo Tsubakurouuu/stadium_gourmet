@@ -40,7 +40,7 @@ class Admin::SessionsController < Devise::SessionsController
 
   def ensure_customer
     if customer_signed_in?
-      flash[:alert] = "すでにログインしています。"
+      flash[:alert] = "お客様は管理者ページにアクセスできません。"
       redirect_to searches_path
     end
   end

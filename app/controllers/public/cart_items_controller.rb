@@ -38,7 +38,7 @@ class Public::CartItemsController < ApplicationController
         return
       end
       @cart_item.save
-      flash[:notice] = "カートに商品を保存しました"
+      flash[:notice] = "カートに商品を保存しました。"
       redirect_to cart_items_path
       return
     end

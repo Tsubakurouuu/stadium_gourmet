@@ -33,7 +33,8 @@
       <% end %>
     </div>
     <% end %>
-  <% else %>
+  <% end %>
+  <% if current_customer.nickname == "guestuser" %>
     <div class="row">
       <p class="text-danger w-100 text-center">商品をカートへ入れるにはログインが必要です</p>
     </div>

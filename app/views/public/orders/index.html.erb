@@ -16,7 +16,11 @@
           <% end %>
         </td>
         <td><%= order.order_number %></td>
-        <td><%= order.order_status_i18n %></td>
+        <% if order.order_status_i18n == "お客様不在" %>
+          <td class="text-danger"><i class="fas fa-exclamation-triangle"></i><%= order.order_status_i18n %></td>
+        <% else %>
+          <td><%= order.order_status_i18n %></td>
+        <% end %>
       </tbody>
     <% end %>
   </table>
