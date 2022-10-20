@@ -27,6 +27,7 @@ ja:
         unauthenticated: "アカウント登録もしくはログインしてください。"
         invalid: "メールアドレスもしくはパスワードが不正です。"
         not_found_in_database: "メールアドレスもしくはパスワードが不正です。"
+        already_authenticated: "すでにログインしています。"
   activerecord:
     attributes:
       customer:
