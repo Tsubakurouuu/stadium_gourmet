@@ -20,6 +20,7 @@
       </table>
       <% if current_admin_store.owner_flag == true %>
         <%= link_to "注文履歴", admin_store_orders_path(@store.id), class: "btn btn-warning" %>
+        <%= link_to "データ確認", admin_store_data_graphs_path(@store.id), class: "btn btn-danger" %>
       <% end %>
     </div>
   </div>
