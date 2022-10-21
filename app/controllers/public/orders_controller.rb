@@ -7,6 +7,14 @@ class Public::OrdersController < ApplicationController
       redirect_to orders_path
       return
     end
+    cart_items = current_customer.cart_items
+    cart_items.each do |cart_item|
+      if cart_item.item.stock < cart_item.amount
+        flash[:alert] = "在庫数を超えての注文はできません。"
+        redirect_to request.referer
+        return
+      end
+    end
     @order = Order.new
   end
 
