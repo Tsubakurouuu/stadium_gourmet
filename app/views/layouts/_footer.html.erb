@@ -1,8 +1,8 @@
-<footer class="fixed-bottom">
+<footer>
 <% if admin_store_signed_in? %>
-  <div style="height: 50px; background-color: #c22a1f;"></div>
+  <div class="admin"></div>
 <% elsif customer_signed_in? %>
-  <div id="sp-fixed-menu" class="for-sp" style="background-color: #a6ce39;">
+  <div id="sp-fixed-menu" class="for-sp">
     <ul>
       <li class="nav-item">
         <%= link_to searches_path, class: 'nav-link' do %>

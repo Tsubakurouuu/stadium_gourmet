@@ -1,32 +1,39 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+body {
+  background: #f1ebe7;
+  width: 100vw;
+  height: 100vh;
+  font-family: "You Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-seril;
+}
+
 header {
   #home {
+    height: 100vh;
     background-image: url("../images/ball.jpg");
     background-size: cover;
     background-position: center;
-    z-index: 9998;
-    height: 100vh;
     position: relative;
+    z-index: 9998;
   }
   #logo {
     position: absolute;
 	  top: 20%;
   }
   .top-logo {
+    color: #a6ce39;
     font-size: 1.5em;
+    font-family: 'Londrina Shadow', cursive;
     width: 100%;
     height: 10vh;
-    color: #a6ce39;
-    font-family: 'Londrina Shadow', cursive;
   }
   .head {
+    width: 100%;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 50px;
     z-index: 9998;
     .header-logo {
       color: #fff;
@@ -95,18 +102,9 @@ header {
   .logo {
     margin-top: 200px;
   }
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-}
-
-body {
-  background: #f1ebe7;
-  width: 100vw;
-  height: 100vh;
-  font-family: "You Gothic Medium", "游ゴシック Medium", "YuGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-seril;
+  .card {
+    width: 90%;
+  }
 }
 
 .long-name {
@@ -218,41 +216,46 @@ h3 {
   }
 }
 
-/*メニューをページ下部に固定*/
-#sp-fixed-menu{
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
-  font-size: 0;
-  z-index: 99;
+footer {
+  position: absolute;
+  bottom: 0;
+  .admin {
+    height: 50px;
+    background-color: #c22a1f;
+  }
+  #sp-fixed-menu{
+    background-color: #a6ce39;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    font-size: 0;
+    z-index: 99;
+    ul{
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100px;
+    }
+    li {
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      border-right: 1px solid #fff;
+      a {
+        color: #fff;
+        text-align: center;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
 }
 
-/*メニューを横並びにする*/
-#sp-fixed-menu ul{
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100px;
-}
-
-#sp-fixed-menu li{
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  border-right: 1px solid #fff;
-}
-
-#sp-fixed-menu li a{
-  color: #fff;
-  text-align: center;
-  display: block;
-  width: 100%;
-}
 
 /* タブレット用CSSをメディアクエリ内に記述する */
 @media screen and (min-width: 521px) {
