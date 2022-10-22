@@ -1,49 +1,100 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
-header .head {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  z-index: 9998;
-}
-
-header #home {
-  background-image: url("../images/ball.jpg");
-  background-size: cover;
-  background-position: center;
-  z-index: 9998;
-  height: 100vh;
-  position: relative;
-}
-
-header #logo {
-	position: absolute;
-	top: 20%;
+header {
+  #home {
+    background-image: url("../images/ball.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 9998;
+    height: 100vh;
+    position: relative;
+  }
+  #logo {
+    position: absolute;
+	  top: 20%;
+  }
+  .top-logo {
+    font-size: 1.5em;
+    width: 100%;
+    height: 10vh;
+    color: #a6ce39;
+    font-family: 'Londrina Shadow', cursive;
+  }
+  .head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 9998;
+    .header-logo {
+      color: #fff;
+      font-size: 50px;
+      font-family: 'Londrina Shadow', cursive;
+      text-align: center;
+      width: 100%;
+      line-height: 50px;
+    }
+  }
 }
 
 #menubar {
 	position: absolute;
-	bottom: 15%;	/*ロゴやメニューが入っているブロックに対して、下からの配置場所の指定。*/
+	bottom: 15%;
 	left: 0px;
+	ul {
+	  list-style: none;
+	  padding-left: 0;
+	  margin-left: 45%;
+	  a {
+	    color: #a6ce39;
+	  }
+	}
 }
 
-.top-logo {
-  font-size: 1.5em;
-  width: 100%;
-  height: 10vh;
-  color: #a6ce39;
-  font-family: 'Londrina Shadow', cursive;
+#rogin {
+  height: 100vh;
+  .logo {
+    margin-top: 200px;
+  }
+  .logbtn {
+    margin-top: 50px;
+    height: 50px;
+    .btn {
+      line-height: 50px;
+    }
+  }
 }
 
-.header-logo {
-  font-size: 50px;
-  text-align: center;
-  width: 100%;
-  line-height: 50px;
-  font-family: 'Londrina Shadow', cursive;
+#ranking {
+  .logo {
+    margin-top: 200px;
+  }
+  .rank-1 {
+    color: #dbb400;
+    background-color: #dbb400;
+  }
+  .rank-2 {
+    color: #c9caca;
+    background-color: #c9caca;
+  }
+  .rank-3 {
+    color: #c9ae5d;
+    background-color: #c9ae5d;
+  }
+  .rank-4 {
+    color: red;
+  }
+  .rank-5 {
+    color: green;
+  }
+}
+
+#usage {
+  .logo {
+    margin-top: 200px;
+  }
 }
 
 footer {
@@ -97,28 +148,6 @@ h3 {
   font-weight: 900;
 }
 
-.rank-1 {
-  color: #dbb400;
-  background-color: #dbb400;
-}
-
-.rank-2 {
-  color: #c9caca;
-  background-color: #c9caca;
-}
-
-.rank-3 {
-  color: #c9ae5d;
-  background-color: #c9ae5d;
-}
-
-.rank-4 {
-  color: red;
-}
-
-.rank-5 {
-  color: green;
-}
 
 .btnlog {
   font-family: lato,sans-serif;

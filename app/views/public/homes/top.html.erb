@@ -3,41 +3,41 @@
       <a class="top-logo mx-auto" href="/">StadiumGourmet</a>
   </h1>
   <nav id="menubar" class="w-100">
-    <ul style="list-style: none; padding-left: 0; margin-left: 45%;">
+    <ul>
       <% unless customer_signed_in? %>
         <li>
-          <a style="color: #a6ce39;" href="#rogin"><i class="fas fa-sign-in-alt"></i> Log In</a>
+          <a href="#rogin"><i class="fas fa-sign-in-alt"></i> Log In</a>
         </li>
       <% end %>
       <li>
-        <a style="color: #a6ce39;" href="#new"><i class="fas fa-star"></i> New Gourmet</a>
+        <a href="#new"><i class="fas fa-star"></i> New Gourmet</a>
       </li>
       <li>
-        <a style="color: #a6ce39;" href="#ranking"><i class="fas fa-crown"></i> Gourmet Ranking</a>
+        <a href="#ranking"><i class="fas fa-crown"></i> Gourmet Ranking</a>
       </li>
       <li class="mt-5">
-        <a style="color: #a6ce39;" href="#usage"><i class="fas fa-lightbulb"></i> こちらのサイトについて</a>
+        <a href="#usage"><i class="fas fa-lightbulb"></i> こちらのサイトについて</a>
       </li>
       <li class="">
-        <a style="color: #a6ce39;" href='/homes/faq'><i class="fas fa-question"></i> FAQ</a>
+        <a href='/homes/faq'><i class="fas fa-question"></i> FAQ</a>
       </li>
     </ul>
   </nav>
 </header>
 <div class="container">
   <% unless customer_signed_in? %>
-  <section id="rogin" style="height: 100vh;">
-    <div class="row mb-3"style="margin-top: 200px;">
+  <section id="rogin">
+    <div class="row mb-3 logo">
       <h3>ログイン</h3>
     </div>
-    <div class="row" style="margin-top: 50px; height: 50px;">
-      <%= link_to 'ゲストログイン(閲覧用)', customers_guest_sign_in_path, class: "btn btnlog mx-auto w-75", style: "line-height: 50px;", method: :post %>
+    <div class="row logbtn">
+      <%= link_to 'ゲストログイン(閲覧用)', customers_guest_sign_in_path, class: "btn btnlog mx-auto w-75", method: :post %>
     </div>
-    <div class="row" style="margin-top: 50px; height: 50px;">
-      <%= link_to "会員登録", new_customer_registration_path, class: "btn btnlog mx-auto w-75", style: "line-height: 50px;" %>
+    <div class="row logbtn">
+      <%= link_to "会員登録", new_customer_registration_path, class: "btn btnlog mx-auto w-75" %>
     </div>
-    <div class="row" style="margin-top: 50px; height: 50px;">
-      <%= link_to "ログイン", new_customer_session_path, class: "btn btnlog mx-auto w-75", style: "line-height: 50px;" %>
+    <div class="row logbtn">
+      <%= link_to "ログイン", new_customer_session_path, class: "btn btnlog mx-auto w-75" %>
     </div>
   </section>
   <% end %>
@@ -64,7 +64,7 @@
     <% end %>
   </section>
   <section id="ranking">
-    <div class="row mb-3" style="margin-top: 200px;">
+    <div class="row mb-3 logo">
       <h3>人気グルメランキング</h3>
     </div>
     <% @items_rank.each.with_index(1) do |item, i| %>
@@ -87,7 +87,7 @@
     <% end %>
   </section>
   <section id="usage">
-    <div class="row mb-3" style="margin-top: 200px;">
+    <div class="row mb-3 logo">
       <h3 class="mx-auto">こちらのサイトについて</h3>
     </div>
     <div class="row">
