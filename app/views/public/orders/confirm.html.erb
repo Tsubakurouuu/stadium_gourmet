@@ -38,7 +38,7 @@
       <%= f.hidden_field :seat_number, value: @order.seat_number %>
       <%= f.hidden_field :total_price, value: @total_price %>
       <div class="text-center">
-        <%= f.submit "注文を確定する", class: "btn btncom text-center", style: "width: 80%;" %>
+        <%= f.submit "注文を確定する", class: "btn btncom text-center" %>
       </div>
     <% end %>
   </div>
@@ -65,10 +65,10 @@
     </div>
     <div class="row">
       <% @cart_items.each do |cart_item| %>
-        <div class="card p-1 mt-1 mb-1 text-dark mx-auto" style="width: 90%;">
+        <div class="card confirm-card p-1 mt-1 mb-1 text-dark mx-auto">
           <div class="row">
             <div class="col-4">
-              <div class="card-img-top"><%= image_tag cart_item.item.image, style: "width: 100%;" %></div>
+              <div class="card-img-top"><%= image_tag cart_item.item.image, class: "item-img" %></div>
             </div>
             <div class="col-8">
               <h5 class="card-title long-name"><%= cart_item.item.name %></h5>
@@ -82,11 +82,7 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <div style= "border: dashed 1px;"></div>
-            </div>
-          </div>
+          <div class="confirm-border"></div>
           <div class="row">
             <div class="col-6">
               <h5 class="text-left">小計</h5>
@@ -106,10 +102,8 @@
     <%= f.hidden_field :seat_number, value: @order.seat_number %>
     <%= f.hidden_field :total_price, value: @total_price %>
     <div class="text-center mt-3 mb-3">
-      <%= f.submit "注文を確定する", class: "btn btncom text-center", style: "width: 80%;" %>
+      <%= f.submit "注文を確定する", class: "btn btncom text-center" %>
     </div>
   <% end %>
-  <div class="row">
-    <h5 style="margin-bottom: 100px;"></h5>
-  </div>
+  <div class="page-under"></div>
 </div>

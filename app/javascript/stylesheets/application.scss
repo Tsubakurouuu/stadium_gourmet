@@ -235,6 +235,21 @@ footer {
   }
 }
 
+.confirm-card {
+  width: 90%;
+  margin: 0 auto;
+  .card-img-top {
+    width: 100%;
+    .item-img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+  }
+  .confirm-border {
+    border: dashed 1px;
+  }
+}
 
 
 .long-name {
@@ -328,6 +343,7 @@ h3 {
 }
 
 .btncom {
+  width: 80%;
   background: #f1e767;
   background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
   background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
