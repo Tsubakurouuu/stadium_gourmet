@@ -231,7 +231,7 @@ footer {
   }
 }
 
-.item-card {
+.store-show-item-card {
   width: 95%;
   .card-img-top {
     width: 100%;
@@ -241,6 +241,25 @@ footer {
       object-fit: cover;
     }
   }
+}
+
+.public-item-show-top {
+  margin-top: 80px;
+}
+
+.item-card {
+  .card-img-top {
+    width: 100%;
+    .item-img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+  }
+}
+
+.item-cart-btn {
+  justify-content: center;
 }
 
 .cart-card {
@@ -256,6 +275,12 @@ footer {
   .cart-border {
     border: dashed 1px;
   }
+}
+
+.btncar {
+  background-color: orange; 
+  line-height: 40px; 
+  width: 50%;
 }
 
 .confirm-card {
@@ -293,7 +318,7 @@ footer {
   width: 85%;
 }
 
-.item-card{
+.order-show-item-card {
   width: 90%;
   .order-detail-card {
     width: 90%;

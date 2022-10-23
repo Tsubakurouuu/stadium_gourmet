@@ -31,7 +31,7 @@
     <% @items.each do |item| %>
       <div class="col-6 mt-3">
         <div class="row">
-          <div class="card item-card mx-auto">
+          <div class="card store-show-item-card mx-auto">
             <%= link_to store_item_path(@store.id, item.id), class: "text-dark" do %>
               <div class="card-img-top"><%= image_tag item.image, class: "item-img" %></div>
               <h5 class="card-title long-name"><%= item.name %></h5>

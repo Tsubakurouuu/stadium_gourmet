@@ -1,9 +1,9 @@
 <div class="container">
-  <div class="row" style="margin-top: 30px;"></div>
-  <div class="card p-2 mt-5 text-dark">
+  <div class="public-item-show-top"></div>
+  <div class="card item-card p-2 mt-5 text-dark">
     <div class="row">
       <div class="col-12">
-        <div class="card-img-top"><%= image_tag @item.image, style: "width: 100%;" %></div>
+        <div class="card-img-top"><%= image_tag @item.image, class: "item-img" %></div>
       </div>
       <div class="col-12 mt-1">
         <h4><strong><%= @item.name %></strong></h4>
@@ -27,8 +27,8 @@
         <%= f.select :amount, *[1..5], { include_blank: "個数" }, class: "form-control" %>
       </div>
     </div>
-    <div class="row mt-3" style="justify-content: center;">
-      <%= button_tag :type => "submit", class: "btn btncar", style: "background-color: orange; line-height: 40px; width: 50%;" do %>
+    <div class="row item-cart-btn mt-3">
+      <%= button_tag :type => "submit", class: "btn btncar" do %>
         <i class="fas fa-shopping-cart"></i> カートにいれる
       <% end %>
     </div>
@@ -39,7 +39,5 @@
       <p class="text-danger w-100 text-center">商品をカートへ入れるにはログインが必要です</p>
     </div>
   <% end %>
-  <div class="row">
-    <h5 style="margin-bottom: 100px;"></h5>
-  </div>
+  <div class="page-under"></div>
 </div>
