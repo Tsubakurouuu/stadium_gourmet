@@ -7,9 +7,9 @@
     <div class="row">
       <div class="col-md-10 offset-md-2">
         <%= form_with model: [@store, @item], url: admin_store_item_path, method: :patch do |f| %>
-          <table class="table table-borderless">
+          <table class="table item-edit-table table-borderless">
             <tr>
-              <th width="13%">商品画像</td>
+              <th>商品画像</td>
               <td><%= f.file_field :image, accept: "image/*" %></td>
             </tr>
             <tr>
@@ -30,7 +30,7 @@
             </tr>
             <tr>
               <th></th>
-              <td><%= f.submit "変更内容を保存", class: "btn btn-success", style: "width: 30%" %></td>
+              <td><%= f.submit "変更内容を保存", class: "btn btn-success" %></td>
             </tr>
           </table>
         <% end %>

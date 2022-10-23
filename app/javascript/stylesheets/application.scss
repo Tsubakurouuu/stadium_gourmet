@@ -321,6 +321,21 @@ footer {
   text-overflow: ellipsis;
 }
 
+.admin-item-show-table {
+  th {
+    width: 20%;
+  }
+  td {
+    width: 80%;
+  }
+}
+
+.admin-item-show-btn {
+  .btn {
+    width: 70%;
+  }
+}
+
 .page-under {
   height: 150px;
 }
