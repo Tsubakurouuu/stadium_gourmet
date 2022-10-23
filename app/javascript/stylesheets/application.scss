@@ -143,11 +143,6 @@ footer {
   }
 }
 
-.sale-area .category {
-  height: 75px;
-  text-align: center;
-}
-
 .sale-card {
   width: 95%;
   .card-img-top {
@@ -285,16 +280,23 @@ h3 {
   border-radius: 20px;
 }
 
+.sale-area .category {
+  height: 75px;
+  text-align: center;
+}
+
 .btnare {
   color: #000;
   background-color: #fff100;
   border-bottom: 5px solid #ccc100;
+  line-height: 75px;
 }
 
 .btncat {
   color: #000;
   background-color: orange;
   border-bottom: 5px solid #ccc100;
+  line-height: 75px;
 }
 
 .btnsol {

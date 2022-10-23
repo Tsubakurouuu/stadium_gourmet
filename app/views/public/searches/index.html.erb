@@ -6,14 +6,14 @@
   <div class="row">
     <% @sale_areas.each do |sale_area| %>
     <div class="col-6 mt-4 sale-area">
-      <%= link_to sale_area.name, sale_area_path(sale_area.id), class: "btn btnare w-100", style: "line-height: 75px;" %>
+      <%= link_to sale_area.name, sale_area_path(sale_area.id), class: "btn btnare w-100" %>
     </div>
     <% end %>
   </div>
   <div class="row mt-5">
     <% @categories.each do |category| %>
     <div class="col-6 mt-4 category">
-      <%= link_to category.name, category_path(category.id), class: "btn btncat w-100", style: "line-height: 75px;" %>
+      <%= link_to category.name, category_path(category.id), class: "btn btncat w-100" %>
     </div>
     <% end %>
   </div>
