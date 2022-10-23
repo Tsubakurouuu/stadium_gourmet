@@ -49,14 +49,14 @@ header {
 footer {
   position: absolute;
   bottom: 0;
-  #sp-fixed-menu{
+  #sp-fixed-menu {
     background-color: #a6ce39;
     width: 100%;
     position: fixed;
     bottom: 0;
     font-size: 0;
     z-index: 99;
-    ul{
+    ul {
       display: flex;
       list-style: none;
       padding: 0;
@@ -337,20 +337,23 @@ h3 {
   font-weight: 900;
 }
 
-
-.btnlog {
-  font-family: lato,sans-serif;
-  font-weight: bold;
-  font-size: 1em;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  color: green;
-  display: inline-block;
-  padding: 10px 40px 10px 40px;
-  position: relative;
-  border: 3px solid green;
-  border-radius: 20px;
+.btn-row {
+  justify-content: center;
+  .btnlog {
+    font-family: lato,sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    color: green;
+    display: inline-block;
+    padding: 10px 40px 10px 40px;
+    position: relative;
+    border: 3px solid green;
+    border-radius: 20px;
+  }
 }
+
 
 .sale-area .category {
   height: 75px;
