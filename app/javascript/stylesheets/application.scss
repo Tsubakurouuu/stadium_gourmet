@@ -220,6 +220,23 @@ footer {
   }
 }
 
+.cart-card {
+  width: 95%;
+  .card-img-top {
+    width: 100%;
+    .item-img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+    }
+  }
+  .cart-border {
+    border: dashed 1px;
+  }
+}
+
+
+
 .long-name {
   white-space: nowrap;
   overflow: hidden;
