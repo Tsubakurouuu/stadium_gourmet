@@ -110,7 +110,30 @@ footer {
   }
 }
 
+#new {
+  .new-card {
+    .card-img-top {
+      width: 100%;
+      .item-img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
 #ranking {
+  .ranking-card {
+    .card-img-top {
+      width: 100%;
+      .item-img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+      }
+    }
+  }
   .logo {
     margin-top: 200px;
   }
@@ -339,19 +362,20 @@ h3 {
 
 .btn-row {
   justify-content: center;
-  .btnlog {
-    font-family: lato,sans-serif;
-    font-weight: bold;
-    font-size: 1em;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    color: green;
-    display: inline-block;
-    padding: 10px 40px 10px 40px;
-    position: relative;
-    border: 3px solid green;
-    border-radius: 20px;
-  }
+}
+
+.btnlog {
+  font-family: lato,sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: green;
+  display: inline-block;
+  padding: 10px 40px 10px 40px;
+  position: relative;
+  border: 3px solid green;
+  border-radius: 20px;
 }
 
 

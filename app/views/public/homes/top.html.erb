@@ -46,11 +46,11 @@
       <h3 class="mx-auto">新着グルメ</h3>
     </div>
     <% @items_new.each do |item| %>
-      <div class="card p-2 mt-3">
+      <div class="card new-card p-2 mt-3">
         <div class="row">
         <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
           <div class="col-12">
-            <div class="card-img-top"><%= image_tag item.image, style: "width: 100%;" %></div>
+            <div class="card-img-top"><%= image_tag item.image, class: "item-img" %></div>
           </div>
           <div class="col-12 mt-1">
             <h4><strong><%= item.name %></strong></h4>
@@ -68,12 +68,12 @@
       <h3>人気グルメランキング</h3>
     </div>
     <% @items_rank.each.with_index(1) do |item, i| %>
-      <div class="card p-2 mt-3 rank-<%= i %>">
+      <div class="card ranking-card p-2 mt-3 rank-<%= i %>">
         <div class="row">
           <h1 class="number-<%= i %> bg-dark ml-3"><%= i %>位</h1>
           <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
             <div class="col-12">
-              <div class="card-img-top"><%= image_tag item.image, style: "width: 100%;" %></div>
+              <div class="card-img-top"><%= image_tag item.image, class: "item-img" %></div>
             </div>
             <div class="col-12 mt-1">
               <h4><strong><%= item.name %></strong></h4>
@@ -119,11 +119,6 @@
       </div>
     </div>
   </section>
-  <div class="row">
-    <h5 style="margin-bottom: 100px;"></h5>
-  </div>
   <a href="" class="btn btn--circle btn--circle-c btn--shadow"><i class="fas fa-arrow-up"></i></a>
-  <div class="row">
-    <h5 style="margin-bottom: 100px;"></h5>
-  </div>
+  <div class="page-under"></div>
 </div>
