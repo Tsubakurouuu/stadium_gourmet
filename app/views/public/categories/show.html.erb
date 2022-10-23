@@ -6,15 +6,15 @@
     <% @items.each do |item| %>
     <div class="col-6 mt-3">
       <div class="row">
-        <div class="card mx-auto" style="width: 95%;">
+        <div class="card category-card mx-auto">
           <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
-            <div class="card-img-top"><%= image_tag item.image, style: "width: 100%; aspect-ratio: 3 / 2; object-fit: cover;" %></div>
+            <div class="card-img-top"><%= image_tag item.image, class: "item-img" %></div>
             <h5 class="card-title long-name"><%= item.name %></h5>
             ￥ <%= item.with_tax_price.to_s(:delimited) %>
-            <table class="table table-borderless table-sm" style="table-layout: fixed;">
+            <table class="table table-borderless table-sm">
               <tr>
-                <th width="20%"><i class="fas fa-store-alt"></i></th>
-                <td class="long-name" width="80%"><%= item.store.name %></td>
+                <th><i class="fas fa-store-alt"></i></th>
+                <td class="long-name"><%= item.store.name %></td>
               </tr>
             </table>
           <% end %>
