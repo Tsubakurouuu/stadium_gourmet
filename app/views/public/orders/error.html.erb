@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row mt-5">
-    <div class="card mx-auto mt-5 p-3" style="width: 90%;">
+    <div class="card error-card mx-auto mt-5 p-3">
       <h1><i class="fas fa-exclamation-triangle text-danger"></i></h1>
       <div class="row">
         <h4 class="text-danger ml-3">エラーが発生しました。</h4>
       </div>
-      <div class="row mx-auto" style="width: 90%;">
+      <div class="row mx-auto trouble">
         <h5 class="row mt-3 text-dark">お手数ですが、はじめからやり直してください。</h5>
       </div>
     </div>
   </div>
-  <div class="row mt-5 ml-2" style="width: 90%;">
+  <div class="row mt-5 ml-2">
     <%= link_to "戻る", cart_items_path, class: "btn btn-primary" %>
   </div>
 </div>
