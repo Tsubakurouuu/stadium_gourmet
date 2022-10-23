@@ -156,11 +156,6 @@ footer {
       width: 100%;
     }
   }
-  .long-name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
   .table {
     table-layout: fixed;
     th {
@@ -185,11 +180,6 @@ footer {
       object-fit: cover;
     }
   }
-  .long-name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
   .table {
     table-layout: fixed;
     th {
@@ -197,9 +187,40 @@ footer {
     }
     td {
       width: 85%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    }
+  }
+}
+
+.store-top {
+  margin-top: 30px;
+}
+
+.store-card {
+  .card-img-top {
+    width: 100%;
+    .store-img {
+      width: 100%;
+    }
+  }
+  .table {
+    table-layout: fixed;
+    th {
+      width: 10%;
+    }
+    td {
+      width: 90%;
+    }
+  }
+}
+
+.item-card {
+  width: 95%;
+  .card-img-top {
+    width: 100%;
+    .item-img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
     }
   }
 }
@@ -208,6 +229,10 @@ footer {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.page-under {
+  height: 150px;
 }
 
 
