@@ -1,12 +1,12 @@
 <div class="contaner">
 <% if @order.order_status_i18n == "お客様不在" %>
   <div class="row">
-    <div class="card mx-auto p-3" style="margin-top: 100px; width: 90%;">
+    <div class="card order-show-card mx-auto p-3">
       <h1><i class="fas fa-exclamation-triangle text-danger"></i></h1>
       <div class="row">
         <h4 class="text-danger ml-3">商品のお届けに参りましたが不在のため持ち帰りました。</h4>
       </div>
-      <div class="row mx-auto" style="width: 90%;">
+      <div class="row trouble mx-auto">
         <h5 class="row mt-3 text-dark">お手数ですが、店舗まで商品を受け取りに来てください。</h5>
       </div>
     </div>
@@ -20,7 +20,7 @@
     <% @product_total += order_detail.subtotal %>
   <% end %>
   <div class="row">
-    <table class="table table-striped table-light mx-auto mt-3" style="width: 85%;">
+    <table class="table order-show-table table-striped table-light mx-auto mt-3">
       <tr>
         <th>注文日</th>
         <td><%= @order.created_at.strftime('%Y/%m/%d/%H:%M') %></td>
@@ -48,7 +48,7 @@
     </table>
   </div>
   <div class="row mt-3">
-    <table class="table table-striped table-light mx-auto" style="width: 85%;">
+    <table class="table order-show-table table-striped table-light mx-auto">
       <tr>
         <th>商品合計</th>
         <td class="text-right"><%= @product_total.to_s(:delimited) %>円</td>
@@ -63,13 +63,13 @@
       </tr>
     </table>
   </div>
-  <div class="card mt-3 p-2 mx-auto" style="width: 90%;">
+  <div class="card item-card mt-3 p-2 mx-auto">
     <div class="row">
     <% @order_details.each do |order_detail| %>
-      <div class="card p-1 mt-1 mb-1 text-dark mx-auto" style="width: 90%;">
+      <div class="card order-detail-card p-1 mt-1 mb-1 text-dark mx-auto">
         <div class="row">
           <div class="col-4">
-            <div class="card-img-top"><%= image_tag order_detail.item.image, style: "width: 100%;" %></div>
+            <div class="card-img-top"><%= image_tag order_detail.item.image, class: "item-img" %></div>
           </div>
           <div class="col-8">
             <h5 class="card-title long-name"><%= order_detail.item.name %></h5>
@@ -78,16 +78,12 @@
                 <p>価格 <%= order_detail.item.with_tax_price.to_s(:delimited) %> 円</p>
               </div>
               <div class="col-5">
-                <p class="text-right">数量: <%= order_detail.amount %></p>
+                <p>数量: <%= order_detail.amount %></p>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div style= "border: dashed 1px;"></div>
-          </div>
-        </div>
+        <div class="order-show-border"></div>
         <div class="row">
           <div class="col-6">
             <h6 class="text-left">小計</h6>
@@ -100,7 +96,5 @@
     <% end %>
     </div>
   </div>
-  <div class="row">
-    <h5 style="margin-bottom: 150px;"></h5>
-  </div>
+  <div class="page-under"></div>
 </div>

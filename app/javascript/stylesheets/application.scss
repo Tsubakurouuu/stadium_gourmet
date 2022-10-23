@@ -258,6 +258,36 @@ footer {
   }
 }
 
+.order-show-card {
+  margin-top: 100px;
+  width: 90%;
+  .trouble {
+    width: 90%;
+  }
+}
+
+.order-show-table {
+  width: 85%;
+}
+
+.item-card{
+  width: 90%;
+  .order-detail-card {
+    width: 90%;
+    .card-img-top {
+      width: 100%;
+      .item-img {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+      }
+    }
+    .order-show-border {
+      border: dashed 1px;
+    }
+  }
+}
+
 .long-name {
   white-space: nowrap;
   overflow: hidden;
