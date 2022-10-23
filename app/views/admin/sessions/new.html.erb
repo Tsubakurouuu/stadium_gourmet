@@ -4,19 +4,19 @@
   </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row mt-5 ml-5">
-    <div class="field" style="margin: 0 auto;">
+    <div class="field mx-auto">
       <%= f.label :メールアドレス %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "50" %>
     </div>
   </div>
   <div class="row mt-5 ml-5">
-    <div class="field" style="margin: 0 auto;">
+    <div class="field mx-auto">
       <%= f.label :パスワード %><br />
       <%= f.password_field :password, autocomplete: "current-password", class: "form-control", size: "50" %>
     </div>
   </div>
   <div class="row mt-5 ml-5">
-    <%= f.submit "ログイン", class: "btn btn-primary mx-auto", style: "width: 20%;" %>
+    <%= f.submit "ログイン", class: "btn btn-primary mx-auto w-25" %>
   </div>
   <% end %>
 </div>
