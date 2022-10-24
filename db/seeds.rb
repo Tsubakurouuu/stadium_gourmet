@@ -121,7 +121,7 @@ item = Item.create!(
   explanation: "豚ひき肉とねぎ・しょうがのみじん切りを炒めてスープを加え、しょうゆ・豆板醤(トウバンジャン)・豆豉(トウチ)・花椒（中国料理で用いられるさんしょう）などで調味した中に、さいの目に切った豆腐を入れて少し煮込み、水溶き片栗粉でとろみをつけたもの。",
   without_tax: "1250",
   is_active: "true",
-  stock: "387",
+  stock: "3",
   earning: "37",
   image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/app/assets/images/mabo.jpg"), filename:"mabo.jpg")
 )
@@ -554,11 +554,65 @@ Order.create!(
   seat_area: "バックネット",
   seat_alphabet: "G",
   seat_number: "56",
-  order_number: "lu5656",
+  order_number: SecureRandom.alphanumeric(6),
   shipping_cost: "200",
-  total_price: "3000",
+  total_price: "4325",
   order_status: "no_customer",
+  created_at: DateTime.new(2022, 10, 20, 9, 30, 0),
 )
+OrderDetail.create!(
+  item_id: "2",
+  order_id: "1",
+  purchase_price: "4125",
+  amount: "3",
+  created_at: DateTime.new(2022, 10, 20, 9, 30, 0),
+)
+
+Order.create!(
+  customer_id: "1",
+  seat_area: "バックネット",
+  seat_alphabet: "A",
+  seat_number: "98",
+  order_number: SecureRandom.alphanumeric(6),
+  shipping_cost: "200",
+  total_price: "1498",
+  order_status: "in_production",
+  created_at: DateTime.new(2022, 10, 21, 10, 33, 0),
+)
+OrderDetail.create!(
+  item_id: "10",
+  order_id: "2",
+  purchase_price: "1298",
+  amount: "2",
+  created_at: DateTime.new(2022, 10, 21, 10, 33, 0),
+)
+
+Order.create!(
+  customer_id: "1",
+  seat_area: "一塁側",
+  seat_alphabet: "C",
+  seat_number: "7",
+  order_number: SecureRandom.alphanumeric(6),
+  shipping_cost: "200",
+  total_price: "2224",
+  order_status: "in_production",
+  created_at: DateTime.new(2022, 10, 22, 10, 6, 0),
+)
+OrderDetail.create!(
+  item_id: "7",
+  order_id: "3",
+  purchase_price: "1210",
+  amount: "1",
+  created_at: DateTime.new(2022, 10, 22, 10, 6, 0),
+)
+OrderDetail.create!(
+  item_id: "11",
+  order_id: "3",
+  purchase_price: "814",
+  amount: "1",
+  created_at: DateTime.new(2022, 10, 22, 10, 6, 0),
+)
+
 
 # カテゴリー初期データ
 Category.create!(name: "弁当")
