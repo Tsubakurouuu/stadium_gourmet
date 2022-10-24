@@ -12,7 +12,7 @@ class Admin::OrdersController < ApplicationController
         return
       end
       @store = current_admin_store
-      @orders = Order.includes(:items).where(items:{store: current_admin_store})
+      @orders = Order.includes(:items).where(items:{store: current_admin_store}).order(created_at: :desc)
     end
   end
 
