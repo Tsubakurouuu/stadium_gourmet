@@ -1,6 +1,6 @@
 <% if obj.errors.any? %>
   <div id="error_explanation">
-    <ul class="text-center card bg-danger" style="list-style: none; padding-left: 0; color: white;">
+    <ul class="text-center card bg-danger">
       <% obj.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>

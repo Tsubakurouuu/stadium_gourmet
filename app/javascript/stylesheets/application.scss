@@ -278,8 +278,8 @@ footer {
 }
 
 .btncar {
-  background-color: orange; 
-  line-height: 40px; 
+  background-color: orange;
+  line-height: 40px;
   width: 50%;
 }
 
@@ -486,6 +486,14 @@ h3 {
 
   .alert {
     background-color: #FF4500;
+  }
+}
+
+#error_explanation {
+  ul {
+    color: white;
+    padding-left: 0;
+    list-style: none;
   }
 }
 
