@@ -563,7 +563,7 @@ Order.create!(
 OrderDetail.create!(
   item_id: "2",
   order_id: "1",
-  purchase_price: "4125",
+  purchase_price: "1375",
   amount: "3",
   created_at: DateTime.new(2022, 10, 20, 9, 30, 0),
 )
@@ -582,7 +582,7 @@ Order.create!(
 OrderDetail.create!(
   item_id: "10",
   order_id: "2",
-  purchase_price: "1298",
+  purchase_price: "649",
   amount: "2",
   created_at: DateTime.new(2022, 10, 21, 10, 33, 0),
 )
