@@ -529,6 +529,37 @@ item = Item.create!(
   image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/app/assets/images/samonebi.jpg"), filename:"samonebi.jpg")
 )
 
+# 顧客初期データ
+Customer.create!(
+  nickname: "ルフィ",
+  email: "luffy@com",
+  password: "111111",
+)
+
+Customer.create!(
+  nickname: "エース",
+  email: "ace@com",
+  password: "111111",
+)
+
+Customer.create!(
+  nickname: "サボ",
+  email: "sabo@com",
+  password: "111111",
+)
+
+# 注文初期データ
+Order.create!(
+  customer_id: "1",
+  seat_area: "バックネット",
+  seat_alphabet: "G",
+  seat_number: "56",
+  order_number: "lu5656",
+  shipping_cost: "200",
+  total_price: "3000",
+  order_status: "no_customer",
+)
+
 # カテゴリー初期データ
 Category.create!(name: "弁当")
 Category.create!(name: "丼")
