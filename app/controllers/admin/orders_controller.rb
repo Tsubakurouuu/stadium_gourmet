@@ -4,7 +4,7 @@ class Admin::OrdersController < ApplicationController
     # 管理者かどうかの分岐処理を記述
     if current_admin_store.owner_flag == true
       @store = Store.find(params[:store_id])
-      @orders = @store.items.flat_map(&:orders)
+      @orders = Order.includes(:items).where(items:{store: @store}).order(created_at: :desc)
     else
       unless params[:store_id].to_i == current_admin_store.id
         flash[:alert] = "他の店舗の注文履歴は閲覧できません。"
