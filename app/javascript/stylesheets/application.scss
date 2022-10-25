@@ -200,6 +200,7 @@ footer {
       width: 100%;
       aspect-ratio: 3 / 2;
       object-fit: cover;
+      position: relative;
     }
   }
   .table {
@@ -243,8 +244,30 @@ footer {
       width: 100%;
       aspect-ratio: 3 / 2;
       object-fit: cover;
+      position: relative;
     }
   }
+}
+
+.sold-out:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 80px solid #f00;
+  border-right: 80px solid transparent;
+}
+
+.sold-out:after {
+  content: "SOLD OUT";
+  position: absolute;
+  top: 14px;
+  left: -7px;
+  font-size: 15px;
+  color: #FFF;
+  transform: rotate(-45deg) translate(-5px, 5px);
 }
 
 .public-item-show-top {

@@ -34,12 +34,11 @@
           <div class="card store-show-item-card mx-auto">
             <%= link_to store_item_path(@store.id, item.id), class: "text-dark" do %>
               <div class="card-img-top"><%= image_tag item.image, class: "item-img" %></div>
-              <h5 class="card-title long-name"><%= item.name %></h5>
-              <% if item.is_active == true %>
-                <div>¥ <%= item.with_tax_price.to_s(:delimited) %></div>
-              <% else %>
-                <div class="text-danger" >売り切れ</div>
+              <% if item.is_active == false %>
+                <div class="sold-out" ></div>
               <% end %>
+              <h5 class="card-title long-name"><%= item.name %></h5>
+              <div>¥ <%= item.with_tax_price.to_s(:delimited) %></div>
             <% end %>
           </div>
         </div>

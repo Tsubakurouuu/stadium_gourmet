@@ -9,8 +9,11 @@
         <div class="card category-card mx-auto">
           <%= link_to store_item_path(item.store_id, item.id), class: "text-dark" do %>
             <div class="card-img-top"><%= image_tag item.image, class: "item-img" %></div>
+            <% if item.is_active == false %>
+              <div class="sold-out" ></div>
+            <% end %>
             <h5 class="card-title long-name"><%= item.name %></h5>
-            ￥ <%= item.with_tax_price.to_s(:delimited) %>
+            <div>¥ <%= item.with_tax_price.to_s(:delimited) %></div>
             <table class="table table-borderless table-sm">
               <tr>
                 <th><i class="fas fa-store-alt"></i></th>

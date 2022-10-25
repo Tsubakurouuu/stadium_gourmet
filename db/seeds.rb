@@ -569,7 +569,7 @@ OrderDetail.create!(
 )
 
 Order.create!(
-  customer_id: "1",
+  customer_id: "2",
   seat_area: "バックネット",
   seat_alphabet: "A",
   seat_number: "98",
