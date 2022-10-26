@@ -1,5 +1,4 @@
 # Stadium Gourmet 
-![スクリーンショット 2022-10-26 10.23.16.png](https://infratop-webcamppro.slack.com/files/U03R5L8S9TM/F048G4K4RLH/____________________________2022-10-26_10.23.16.png)
 ## サイト概要
 ### サイトテーマ
 自分が欲しい商品を検索し、購入することができるECサイト
