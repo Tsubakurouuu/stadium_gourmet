@@ -1,5 +1,5 @@
-# Stadium Gourmet ~スタジアムグルメ~
-！[スクリーンショット 2022-10-26 10.23.16.png](file:///Users/inetomeyuukana/Desktop/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-10-26%2010.23.16.png)
+# Stadium Gourmet 
+![スクリーンショット 2022-10-26 10.23.16.png](file:///Users/inetomeyuukana/Desktop/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202022-10-26%2010.23.16.png)
 ## サイト概要
 ### サイトテーマ
 自分が購入したい商品を検索し、購入することができるECサイト
@@ -49,6 +49,6 @@
 ## 使用素材
 - devise
 - chartkick
-- pay.jp
 - bootstrap
-- kaminari
+- enum_help
+- whenever
