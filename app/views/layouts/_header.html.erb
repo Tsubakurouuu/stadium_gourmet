@@ -1,7 +1,6 @@
-<header class="head">
-<!--店舗ログイン時-->
 <% if admin_store_signed_in? %>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c22a1f">
+<header class="admin-head">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href='<%= "/admin/stores/#{current_admin_store.id}" %>'>管理者</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -32,8 +31,8 @@
   </nav>
 </header>
 <% elsif customer_signed_in? %>
-<header class="head">
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a6ce39; height: 70px;">
+<header class="customer-head">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <a class="header-logo navbar-brand mx-auto" href="/">StadiumGourmet</a>
   </nav>
 </header>
