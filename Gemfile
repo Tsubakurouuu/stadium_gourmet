@@ -63,6 +63,8 @@ gem 'devise'
 gem 'kaminari','~> 1.2.1'
 
 gem 'image_processing', '~> 1.2'
+gem "aws-sdk-s3", require: false
+
 
 gem 'enum_help'
 
